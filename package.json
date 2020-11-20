@@ -7,6 +7,18 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gridsome": "^0.7.0"
+    "@gridsome/transformer-json": "^0.2.1",
+    "@gridsome/transformer-yaml": "^0.2.1",
+    "@gridsome/vue-remark": "^0.2.5",
+    "bootstrap": "^4.5.3",
+    "gridsome": "^0.7.0",
+    "gridsome-source-static-meta": "^1.0.1",
+    "swiper": "^6.3.5",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^3.0.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0"
   }
 }

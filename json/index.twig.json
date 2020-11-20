@@ -1,0 +1,84 @@
+{
+  "index": {
+    "banner": {
+      "title": "Hello, <br />I’m Homeway ",
+      "subtitle": "I’m a web designer, <br />and a frontend developer",
+      "button": "About Myself",
+      "imgSrc": "/static/img/index-banner.svg"
+    },
+    "about": {
+      "imgSrc": "/static/img/about-photo.jpg",
+      "description": "I’m a developer who have enthusiasm on thinking and trying, and have experience on building web apps. I keep learning in my free time, and make my code better and better.",
+      "socialLinks": [
+        {
+          "icon": "/static/img/mail.svg",
+          "description": "cloudtom@gmail.com",
+          "link": "mailto://cloudtom@gmail.com"
+        }
+      ],
+      "skill": {
+        "imgSrc": "/static/img/skill-image.svg",
+        "description": "I’m experienced at following: ",
+        "items": [
+          "HTML / CSS / SCSS",
+          "HTML Template Engine",
+          "JavaScript / TypeScript",
+          "Angular / Vue",
+          "Git / Version Control",
+          "UI Design"
+        ]
+      }
+    },
+    "works": {
+      "items": [
+        {
+          "title": "Taiwan Expo",
+          "imgSrc": "/static/img/works/works-expo.jpg",
+          "link": "https://taiwanexpo.online"
+        },
+        {
+          "title": "Tpark Website",
+          "imgSrc": "/static/img/works/works-tpark.jpg",
+          "link": "https://www.tpark.com.tw/"
+        },
+        {
+          "title": "Changhua Hospital Website",
+          "imgSrc": "/static/img/works/works-chhw.jpg",
+          "link": "https://www.chhw.mohw.gov.tw/"
+        },
+        {
+          "title": "Corigin",
+          "imgSrc": "/static/img/works/works-corigin.jpg",
+          "link": "https://gohomenow.cf/corigin/"
+        },
+        {
+          "title": "Supervival",
+          "imgSrc": "/static/img/works/works-supervival.jpg",
+          "link": "https://supervival.co/"
+        }
+      ],
+      "description": "Wanna see more?<br />Here’s the collection of website works during these years.",
+      "link": "works.html",
+      "button": "More Works"
+    },
+    "blog": {
+      "posts": [
+        {
+          "imgSrc": "/static/img/blog/post-cover-01.jpg",
+          "title": "Post Title 01",
+          "description": "e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n"
+        },
+        {
+          "imgSrc": "/static/img/blog/post-cover-02.jpg",
+          "title": "Post Title 02",
+          "description": "e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n"
+        },
+        {
+          "imgSrc": "/static/img/blog/post-cover-03.jpg",
+          "title": "Post Title 03",
+          "description": "e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n"
+        }
+      ]
+    }
+  }
+}

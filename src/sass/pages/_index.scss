@@ -1,0 +1,339 @@
+.about {
+  padding: 6em 0;
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__photo {
+    position: relative;
+    min-height: 18rem;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: url('../../static/img/memphis-circle.svg') center center no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('../../static/img/about-photo.jpg') center center no-repeat;
+      background-size: 82%;
+      clip-path: circle(40%);
+      @include atExtraLarge {
+        clip-path: circle(35%);
+      }
+      @include atLarge {
+        clip-path: circle(30%);
+      }
+      @include atMedium {
+        background-size: 200px;
+        clip-path: circle(5rem at 50%);
+      }
+      @include atSmall {
+        background-size: 180px;
+        clip-path: circle(5rem at 50%);
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @include atMedium {
+      min-height: 12rem;
+    }
+  }
+  &__description {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: -2em;
+      width: 22%;
+      height: 100%;
+      background: url('../../static/img/memphis-square-1.svg') top right no-repeat;
+      background-size: contain;
+    }
+    @include atMedium {
+      margin-top: 1em;
+      text-align: center;
+      &::before {
+        top: auto;
+        bottom: -6em;
+        width: 25%;
+      }
+    }
+  }
+  &__row {
+    &--bottom {
+      margin-top: 6em;
+    }
+  }
+  &__social-links {
+    @include atMedium {
+      @include flexCentered;
+    }
+  }
+  &__skill-container {
+    @include atMedium {
+      text-align: center;
+    }
+  }
+  &__skill-image {
+    img {
+      width: 100%;
+      height: 100%;
+      margin-top: 1em;
+      margin-left: 3em;
+    }
+  }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  img {
+    width: 1.5rem;
+    margin-right: 1em;
+  }
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  img {
+    margin-right: 1em;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  @include atMedium {
+    flex-direction: column;
+    justify-content: center;
+    img {
+      margin-right: 0;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.works {
+  position: relative;
+  padding: 6em 0 12em 0;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -15em;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: url('../../static/img/memphis-block-2.svg') top left no-repeat;
+    background-size: contain;
+    @include atMedium {
+      width: 40%;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__slider {
+    position: relative;
+    width: 100%;
+    margin-top: 3em;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -25%;
+      right: -15%;
+      width: 20%;
+      height: 100%;
+      background: url('../../static/img/memphis-triangle-1.svg') top right no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -25%;
+      left: -15%;
+      width: 20%;
+      height: 100%;
+      background: url('../../static/img/memphis-triangle-2.svg') bottom left
+        no-repeat;
+      background-size: contain;
+    }
+    @include atLarge {
+      height: 50vh;
+      padding: 6em 0;
+    }
+  }
+  &__description {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    p {
+      margin: 3em 0;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3em;
+      right: -5vw;
+      width: 3%;
+      height: 100%;
+      background: url('../../static/img/memphis-arrow.svg') top right no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.work-item {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: $blue, $alpha: 0.16);
+  }
+  &__title {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    right: 1em;
+    bottom: 0;
+    color: $white;
+    font-size: 2rem;
+    @include dropShadow($gray);
+  }
+}
+
+.swiper-slide {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.swiper-container {
+  @include atMedium {
+    height: 50vh;
+  }
+}
+
+.swiper-button {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  &-prev {
+    left: -5vw;
+    @include atDoubleExtraLarge {
+      left: -2.5em;
+    }
+    @include atSmall {
+      left: 1.5em;
+    }
+  }
+  &-next {
+    right: -5vw;
+    left: auto;
+    @include atDoubleExtraLarge {
+      right: -2.5em;
+    }
+    @include atSmall {
+      right: 1.5em;
+    }
+  }
+}
+
+.section-title {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -0.25em;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    margin: 0 auto;
+    background: $yellow;
+  }
+}
+
+.blog {
+  position: relative;
+  padding: 6em 0;
+  background: $gray-lighter;
+  &__overlay {
+    position: absolute;
+    z-index: -1;
+    top: -5em;
+    width: 100%;
+    min-height: 6em;
+    object-fit: fill;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__posts {
+    display: flex;
+    width: 100%;
+    margin-top: 3em;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    height: 100%;
+    background: url('../../static/img/memphis-block-3.svg') bottom right no-repeat;
+    background-size: contain;
+    @include atLarge {
+      width: 75%;
+    }
+  }
+}
+
+.post-item {
+  &__cover {
+    width: 100%;
+    height: 25em;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__description {
+    margin-top: 1.5em;
+    a {
+      margin-bottom: 2rem;
+    }
+  }
+}

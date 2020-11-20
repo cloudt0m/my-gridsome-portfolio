@@ -1,0 +1,22 @@
+.single-post {
+  padding: 6em 0;
+  @include atMedium {
+    padding: 3em 0;
+  }
+}
+
+.single-post-item {
+  img {
+    width: 100%;
+  }
+  &__title {
+    margin-top: 0.5em;
+  }
+  &__tags {
+    display: flex;
+    margin: 3em 0;
+    a {
+      margin-right: 1em;
+    }
+  }
+}
