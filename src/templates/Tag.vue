@@ -4,13 +4,13 @@
       <div class="banner-page__container container">
         <div class="banner-page__row row">
           <div class="col-md-6 banner-page__title">
-            <img
+            <g-image
               src="../../static/img/blog-banner-title.svg"
               alt=""
             />
           </div>
           <div class="col-md-6 banner-page__image">
-            <img
+            <g-image
               src="../../static/img/blog-banner.svg"
               alt=""
             />

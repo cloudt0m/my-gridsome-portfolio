@@ -32,6 +32,7 @@
     height: 100%;
     img {
       height: calc(100% + 3rem);
+      max-width: none;
     }
     @include atMedium {
       opacity: 0.3;

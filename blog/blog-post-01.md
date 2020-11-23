@@ -14,5 +14,5 @@ import data from '~/data/youtube.json'
 > {{ $frontmatter.summary }}
 
 // Use your imported Vue Components.
-<YouTube :id="data.id" />
-<AboutUs />
+<!-- <YouTube :id="data.id" />
+<AboutUs /> -->

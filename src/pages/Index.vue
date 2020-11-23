@@ -9,10 +9,10 @@
             <button class="btn btn--secondary">About Myself</button>
           </div>
           <div class="banner__image col-lg-7">
-            <img
+            <g-image
               src="../../static/img/index-banner.svg"
               alt=""
-            >
+            />
           </div>
         </div>
       </div>
@@ -27,11 +27,11 @@
             <ul class="about__social-links">
 
               <li class="social-link">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/mail.svg"
                   alt=""
-                >
+                />
                 <a href="mailto://cloudtom@gmail.com">
                   <strong>cloudtom@gmail.com</strong>
                 </a>
@@ -48,66 +48,66 @@
             <ul class="about__skill">
 
               <li class="skill-item">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
-                >
+                />
                 <p>
                   HTML / CSS / SCSS
                 </p>
               </li>
 
               <li class="skill-item">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
-                >
+                />
                 <p>
                   HTML Template Engine
                 </p>
               </li>
 
               <li class="skill-item">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
-                >
+                />
                 <p>
                   JavaScript / TypeScript
                 </p>
               </li>
 
               <li class="skill-item">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
-                >
+                />
                 <p>
                   Angular / Vue
                 </p>
               </li>
 
               <li class="skill-item">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
-                >
+                />
                 <p>
                   Git / Version Control
                 </p>
               </li>
 
               <li class="skill-item">
-                <img
+                <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
-                >
+                />
                 <p>
                   UI Design
                 </p>
@@ -116,10 +116,10 @@
             </ul>
           </div>
           <div class="about__skill-image col-md-8">
-            <img
+            <g-image
               src="../../static/img/skill-image.svg"
               alt=""
-            >
+            />
           </div>
         </div>
       </div>
@@ -129,167 +129,74 @@
       <div class="container works__container">
         <h2 class="section-title">WORKS</h2>
         <index-slider />
-        <!-- <div class="works__slider col-12">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-
-              <div class="swiper-slide work-item">
-                <img
-                  src="../../static/img/works/works-expo.jpg"
-                  alt=""
-                  class="work-item__cover"
-                >
-                <a
-                  href=""
-                  class="work-item__link"
-                >
-                  <h2 class="work-item__title">Taiwan Expo</h2>
-                </a>
-              </div>
-
-              <div class="swiper-slide work-item">
-                <img
-                  src="../../static/img/works/works-tpark.jpg"
-                  alt=""
-                  class="work-item__cover"
-                >
-                <a
-                  href=""
-                  class="work-item__link"
-                >
-                  <h2 class="work-item__title">Tpark Website</h2>
-                </a>
-              </div>
-
-              <div class="swiper-slide work-item">
-                <img
-                  src="../../static/img/works/works-chhw.jpg"
-                  alt=""
-                  class="work-item__cover"
-                >
-                <a
-                  href=""
-                  class="work-item__link"
-                >
-                  <h2 class="work-item__title">Changhua Hospital Website</h2>
-                </a>
-              </div>
-
-              <div class="swiper-slide work-item">
-                <img
-                  src="../../static/img/works/works-corigin.jpg"
-                  alt=""
-                  class="work-item__cover"
-                >
-                <a
-                  href=""
-                  class="work-item__link"
-                >
-                  <h2 class="work-item__title">Corigin</h2>
-                </a>
-              </div>
-
-              <div class="swiper-slide work-item">
-                <img
-                  src="../../static/img/works/works-supervival.jpg"
-                  alt=""
-                  class="work-item__cover"
-                >
-                <a
-                  href=""
-                  class="work-item__link"
-                >
-                  <h2 class="work-item__title">Supervival</h2>
-                </a>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-          <button class="swiper-button swiper-button-prev">
-            <img
-              class="icon"
-              src="../../static/img/slider-prev.svg"
-              alt=""
-            >
-          </button>
-          <button class="swiper-button swiper-button-next">
-            <img
-              class="icon"
-              src="../../static/img/slider-next.svg"
-              alt=""
-            >
-          </button>
-        </div> -->
         <div class="works__description">
           <p>Wanna see more?<br />Here’s the collection of website works during these years.</p>
-          <a
-            href="/works"
+          <g-link
+            to="/works"
             class="btn btn--primary"
-          >More Works</a>
+          >More Works</g-link>
         </div>
       </div>
     </section>
 
     <section class="blog">
-      <img
+      <g-image
         class="blog__overlay"
         src="../../static/img/memphis-wave.svg"
         alt=""
-      >
+      />
       <div class="container blog__container">
         <h2 class="section-title">BLOG POSTS</h2>
         <div class="blog__posts row">
 
           <div class="post-item col-md-4">
             <div class="post-item__cover">
-              <img
+              <g-image
                 src="../../static/img/blog/post-cover-01.jpg"
                 alt=""
-              >
+              />
             </div>
             <div class="post-item__description">
               <h4>Post Title 01</h4>
               <p>e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n</p>
-              <a
-                href=""
+              <g-link
+                to="/"
                 class="btn btn--primary"
-              >Read</a>
+              >Read</g-link>
             </div>
           </div>
 
           <div class="post-item col-md-4">
             <div class="post-item__cover">
-              <img
+              <g-image
                 src="../../static/img/blog/post-cover-02.jpg"
                 alt=""
-              >
+              />
             </div>
             <div class="post-item__description">
               <h4>Post Title 02</h4>
               <p>e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n</p>
-              <a
-                href=""
+              <g-link
+                to="/"
                 class="btn btn--primary"
-              >Read</a>
+              >Read</g-link>
             </div>
           </div>
 
           <div class="post-item col-md-4">
             <div class="post-item__cover">
-              <img
+              <g-image
                 src="../../static/img/blog/post-cover-03.jpg"
                 alt=""
-              >
+              />
             </div>
             <div class="post-item__description">
               <h4>Post Title 03</h4>
               <p>e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n</p>
-              <a
-                href=""
+              <g-link
+                to="/"
                 class="btn btn--primary"
-              >Read</a>
+              >Read</g-link>
             </div>
           </div>
 
@@ -308,7 +215,7 @@ export default {
     title: "Main Page",
   },
   components: {
-    IndexSlider
+    IndexSlider,
   },
 };
 </script>

@@ -9,39 +9,39 @@
           src="../../static/img/works/works-expo.jpg"
           alt=""
           class="work-item__cover"
-        >
-        <a
-          href=""
+        />
+        <g-link
+          to="/"
           class="work-item__link"
         >
           <h2 class="work-item__title">Taiwan Expo</h2>
-        </a>
+        </g-link>
       </swiper-slide>
       <swiper-slide class="work-item">
         <img
           src="../../static/img/works/works-expo.jpg"
           alt=""
           class="work-item__cover"
-        >
-        <a
-          href=""
+        />
+        <g-link
+          to="/"
           class="work-item__link"
         >
           <h2 class="work-item__title">Taiwan Expo</h2>
-        </a>
+        </g-link>
       </swiper-slide>
       <swiper-slide class="work-item">
         <img
           src="../../static/img/works/works-expo.jpg"
           alt=""
           class="work-item__cover"
-        >
-        <a
-          href=""
+        />
+        <g-link
+          to="/"
           class="work-item__link"
         >
           <h2 class="work-item__title">Taiwan Expo</h2>
-        </a>
+        </g-link>
       </swiper-slide>
     </swiper>
     <button class="swiper-button swiper-button-prev">
@@ -49,20 +49,20 @@
         class="icon"
         src="../../static/img/slider-prev.svg"
         alt=""
-      >
+      />
     </button>
     <button class="swiper-button swiper-button-next">
       <img
         class="icon"
         src="../../static/img/slider-next.svg"
         alt=""
-      >
+      />
     </button>
     <!-- <div class="swiper-container">
       <div class="swiper-wrapper">
 
         <div class="swiper-slide work-item">
-          <img
+          <g-image
             src="../../static/img/works/works-expo.jpg"
             alt=""
             class="work-item__cover"
@@ -76,7 +76,7 @@
         </div>
 
         <div class="swiper-slide work-item">
-          <img
+          <g-image
             src="../../static/img/works/works-tpark.jpg"
             alt=""
             class="work-item__cover"
@@ -90,7 +90,7 @@
         </div>
 
         <div class="swiper-slide work-item">
-          <img
+          <g-image
             src="../../static/img/works/works-chhw.jpg"
             alt=""
             class="work-item__cover"
@@ -104,7 +104,7 @@
         </div>
 
         <div class="swiper-slide work-item">
-          <img
+          <g-image
             src="../../static/img/works/works-corigin.jpg"
             alt=""
             class="work-item__cover"
@@ -118,7 +118,7 @@
         </div>
 
         <div class="swiper-slide work-item">
-          <img
+          <g-image
             src="../../static/img/works/works-supervival.jpg"
             alt=""
             class="work-item__cover"
@@ -136,14 +136,14 @@
     </div>
     <div class="swiper-pagination"></div>
     <button class="swiper-button swiper-button-prev">
-      <img
+      <g-image
         class="icon"
         src="../../static/img/slider-prev.svg"
         alt=""
       >
     </button>
     <button class="swiper-button swiper-button-next">
-      <img
+      <g-image
         class="icon"
         src="../../static/img/slider-next.svg"
         alt=""

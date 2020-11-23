@@ -8,44 +8,44 @@
         <div class="nav__topbar"></div>
         <div class="container-fluid nav__container">
           <div class="row nav__row">
-            <a
-              href="/"
+            <g-link
+              to="/"
               class="nav__logo col-md-4 col-lg-6"
             >
-              <img
-                src="../../static/img/logo.svg"
+              <g-image
+                src="/img/logo.svg"
                 alt=""
-              >
-            </a>
+              />
+            </g-link>
             <ul class="nav__items offset-md-2 offset-lg-2 col-md-6 col-lg-4">
               <li class="nav-item">
                 <button class="nav-item__search">
-                  <img
-                    src="../../static/img/search.svg"
+                  <g-image
+                    src="/img/search.svg"
                     alt=""
-                  >
+                  />
                 </button>
               </li>
 
               <li class="nav-item">
-                <a
-                  href="/#about"
+                <g-link
+                  to="/#about"
                   class="nav-item__link"
-                >About</a>
+                >About</g-link>
               </li>
 
               <li class="nav-item">
-                <a
-                  href="/works"
+                <g-link
+                  to="/works"
                   class="nav-item__link"
-                >Works</a>
+                >Works</g-link>
               </li>
 
               <li class="nav-item">
-                <a
-                  href="/blog"
+                <g-link
+                  to="/blog"
                   class="nav-item__link"
-                >Blog</a>
+                >Blog</g-link>
               </li>
 
             </ul>
