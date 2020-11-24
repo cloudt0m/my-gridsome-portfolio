@@ -35,7 +35,7 @@
         </div>
         <div class="row">
           <div class="single-work__description col-12">
-            <p>{{ $page.work.description }}</p>
+            <p v-html=$page.work.description></p>
           </div>
         </div>
         <div class="row">
@@ -102,16 +102,6 @@ query Work ($id: ID, $prevId: ID, $nextId: ID) {
       imgSrc
       imgAlt
       description
-    }
-    fastLinks {
-      prev {
-        link
-        title
-      }
-      next {
-        link
-        title
-      }
     }
   }
   prev: work (id: $prevId) {

@@ -36,8 +36,11 @@
           <div class="works-list-item__content">
             <h4 class="works-list-item__title">{{ work.node.title }}</h4>
             <h5 class="works-list-item__date">{{ work.node.date }}</h5>
-            <p class="works-list-item__description">
-              {{ work.node.summary }}
+            <p
+              class="works-list-item__description"
+              v-html=work.node.summary
+            >
+
             </p>
             <g-link
               :to="work.node.path"

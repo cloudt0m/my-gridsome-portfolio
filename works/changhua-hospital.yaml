@@ -1,0 +1,19 @@
+title: Changhua Hospital Website
+summary:
+  The website is a renewal of old one. The old version of the site was not easy to use, and designed in old resolution specification.
+description:
+  The website is a renewal of old one. The old version of the site was not easy to use, and designed in old resolution specification.<br />
+  Now the website is more fashion, more user friendly, by redesigned in modern visual language and reconstructing the site structure.
+  I participated in the site from UI stage, to HTML / SCSS / JS development. Now it is transcribed to razor and work with dotnet framework.
+date: 2020-08-31
+imgSrc: '/img/works/works-chhw.jpg'
+otherImages:
+  - imgSrc: '/img/works/works-chhw-page-01.jpg'
+    imgAlt: Introduction Section
+    description: Introduction Section
+  - imgSrc: '/img/works/works-chhw-page-02.jpg'
+    imgAlt: Inner Page Banner
+    description: Inner Page Banner
+  - imgSrc: '/img/works/works-chhw-page-03.jpg'
+    imgAlt: Evergreen Version
+    description: Evergreen Version

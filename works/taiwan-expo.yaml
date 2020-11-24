@@ -1,34 +1,19 @@
 title: Taiwan Expo
 summary:
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when
-  an unknown printer took a galley of type and scrambled it to make a type specimen
+  Taiwan Expo is a website organized by TAITRA and Bureau of Foreign Trade, provides foreign companies to find Taiwan's suppliers.
 description:
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-  an unknown printer took a galley of type and scrambled it to make a type specimen
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-  Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-  unknown printer took a galley of type and scrambled it to make a type specimen Lorem
-  Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-  has been the industry's standard dummy text ever since the 1500s, when an unknown
-  printer took a galley of type and scrambled it to make a type specimen "
+  Taiwan Expo is a website organized by TAITRA and Bureau of Foreign Trade, provides foreign companies to find Taiwan's suppliers.<br />
+  It features iframe virtual pavilions and live streams as introduction to Taiwan's highlighted industries.
+  The website development started from html template engine, scss, and gulp. Then completed html transcribed to razor, works with dotnet backend.
 date: 2020-10-06
 imgSrc: '/img/works/works-expo.jpg'
 otherImages:
-  - imgSrc: '/img/works/works-expo.jpg'
-    imgAlt: Taiwan Expo Home Page
-    description: Taiwan Expo Home Page
-  - imgSrc: '/img/works/works-expo.jpg'
-    imgAlt: Taiwan Expo Home Page
-    description: Taiwan Expo Home Page
-  - imgSrc: '/img/works/works-expo.jpg'
-    imgAlt: Taiwan Expo Home Page
-    description: Taiwan Expo Home Page
-fastLinks:
-  prev:
-    link: '/works/single-work.html'
-    title: Tpark Website
-  next:
-    link: '/works/single-work.html'
-    title: Tpark Website
+  - imgSrc: '/img/works/works-expo-page-01.jpg'
+    imgAlt: Culture Section
+    description: Culture Section
+  - imgSrc: '/img/works/works-expo-page-02.jpg'
+    imgAlt: Pavilions List
+    description: Pavilions List
+  - imgSrc: '/img/works/works-expo-page-03.jpg'
+    imgAlt: Slider Section
+    description: Slider Section

@@ -25,7 +25,6 @@ module.exports = function(api) {
     `);
 
     result.data.allWork.edges.forEach((edge, i, edges) => {
-      console.log(edges);
       const prev = edges[i - 1];
       const next = edges[i + 1];
 
