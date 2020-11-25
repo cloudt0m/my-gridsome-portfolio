@@ -24,6 +24,8 @@
   &__logo {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: flex-start;
     img {
       width: 100%;
       height: 100%;
@@ -31,7 +33,8 @@
     }
     @include atLarge {
       text-align: center;
-      height: auto;
+      height: auto;      
+      justify-content: center;
     }
   }
   &__items {

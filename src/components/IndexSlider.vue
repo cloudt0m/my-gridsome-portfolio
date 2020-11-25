@@ -4,55 +4,29 @@
       ref="mySwiper"
       :options="swiperOptions"
     >
-      <swiper-slide class="work-item">
-        <img
-          src="../../static/img/works/works-expo.jpg"
+      <swiper-slide class="work-item" v-for="work in $static.works.edges" :key="work.node.id">
+        <g-image
+          :src="work.node.imgSrc"
           alt=""
           class="work-item__cover"
         />
         <g-link
-          to="/"
+          :to="work.node.path"
           class="work-item__link"
         >
-          <h2 class="work-item__title">Taiwan Expo</h2>
-        </g-link>
-      </swiper-slide>
-      <swiper-slide class="work-item">
-        <img
-          src="../../static/img/works/works-expo.jpg"
-          alt=""
-          class="work-item__cover"
-        />
-        <g-link
-          to="/"
-          class="work-item__link"
-        >
-          <h2 class="work-item__title">Taiwan Expo</h2>
-        </g-link>
-      </swiper-slide>
-      <swiper-slide class="work-item">
-        <img
-          src="../../static/img/works/works-expo.jpg"
-          alt=""
-          class="work-item__cover"
-        />
-        <g-link
-          to="/"
-          class="work-item__link"
-        >
-          <h2 class="work-item__title">Taiwan Expo</h2>
+          <h2 class="work-item__title">{{ work.node.title }}</h2>
         </g-link>
       </swiper-slide>
     </swiper>
     <button class="swiper-button swiper-button-prev">
-      <img
+      <g-image
         class="icon"
         src="../../static/img/slider-prev.svg"
         alt=""
       />
     </button>
     <button class="swiper-button swiper-button-next">
-      <img
+      <g-image
         class="icon"
         src="../../static/img/slider-next.svg"
         alt=""
@@ -152,6 +126,20 @@
   </div>
 </template>
 
+<static-query>
+  query {
+    works: allWork {
+      edges {
+        node {
+          title
+          path
+          imgSrc
+        }
+      }
+    }
+  }
+</static-query>
+
 <script>
 export default {
   name: "slider",
@@ -175,7 +163,6 @@ export default {
     },
   },
   mounted() {
-    console.log("Current Swiper instance object", this.swiper);
     this.swiper.slideTo(3, 1000, false);
   },
 };

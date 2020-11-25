@@ -149,52 +149,18 @@
         <h2 class="section-title">BLOG POSTS</h2>
         <div class="blog__posts row">
 
-          <div class="post-item col-md-4">
+          <div class="post-item col-md-4" v-for="post in $static.posts.edges" :key="post.id">
             <div class="post-item__cover">
               <g-image
-                src="../../static/img/blog/post-cover-01.jpg"
+                :src="post.node.imgSrc"
                 alt=""
               />
             </div>
             <div class="post-item__description">
-              <h4>Post Title 01</h4>
-              <p>e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n</p>
+              <h4>{{ post.node.title }}</h4>
+              <p>{{ post.node.summary }}</p>
               <g-link
-                to="/"
-                class="btn btn--primary"
-              >Read</g-link>
-            </div>
-          </div>
-
-          <div class="post-item col-md-4">
-            <div class="post-item__cover">
-              <g-image
-                src="../../static/img/blog/post-cover-02.jpg"
-                alt=""
-              />
-            </div>
-            <div class="post-item__description">
-              <h4>Post Title 02</h4>
-              <p>e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n</p>
-              <g-link
-                to="/"
-                class="btn btn--primary"
-              >Read</g-link>
-            </div>
-          </div>
-
-          <div class="post-item col-md-4">
-            <div class="post-item__cover">
-              <g-image
-                src="../../static/img/blog/post-cover-03.jpg"
-                alt=""
-              />
-            </div>
-            <div class="post-item__description">
-              <h4>Post Title 03</h4>
-              <p>e printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived n</p>
-              <g-link
-                to="/"
+                :to="post.node.path"
                 class="btn btn--primary"
               >Read</g-link>
             </div>
@@ -206,6 +172,22 @@
 
   </Layout>
 </template>
+
+<static-query>
+  query {
+    posts: allPost {
+      edges {
+        node {
+          title
+          summary
+          path
+          date (format: "YYYY-MM-DD")
+          imgSrc
+        }
+      }
+    }
+  }
+</static-query>
 
 <script>
 import IndexSlider from "../components/IndexSlider";
