@@ -6,6 +6,7 @@ description:
   It was built with HTML template engine / SCSS / JS. There's no framework development involved, to keep its simplicity.
 date: 2019-03-01
 imgSrc: '/img/works/works-supervival.jpg'
+link: "https://supervival.co"
 otherImages:
   - imgSrc: '/img/works/works-supervival-page-01.jpg'
     imgAlt: Introduction Section

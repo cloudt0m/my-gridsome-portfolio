@@ -7,6 +7,7 @@ description:
   The website development started from html template engine, scss, and gulp. Then completed html transcribed to razor, works with dotnet backend.
 date: 2020-10-06
 imgSrc: '/img/works/works-expo.jpg'
+link: https://taiwanexpo.online
 otherImages:
   - imgSrc: '/img/works/works-expo-page-01.jpg'
     imgAlt: Culture Section

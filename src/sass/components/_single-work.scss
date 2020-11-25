@@ -17,9 +17,17 @@
   }
   &__date {
     margin-bottom: 0.25em;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      margin-left: 1em;
+    }
+    h4 {
+      margin-bottom: 0;
+    }
     @include atMedium {
-      text-align: center;
+      justify-content: center;
     }
   }
   &__cover {

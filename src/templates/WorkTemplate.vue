@@ -5,13 +5,13 @@
         <div class="banner-page__row row">
           <div class="col-md-6 banner-page__title">
             <g-image
-              src="../../static/img/work-banner-title.svg"
+              src="/img/work-banner-title.svg"
               alt=""
             />
           </div>
           <div class="col-md-6 banner-page__image">
             <g-image
-              src="../../static/img/work-banner.svg"
+              src="/img/work-banner.svg"
               alt=""
             />
           </div>
@@ -23,7 +23,12 @@
       <div class="single-work__container container">
         <div class="single-work__head-row row">
           <h2 class="single-work__title col-md-8">{{ $page.work.title }}</h2>
-          <h4 class="single-work__date col-md-4">{{ $page.work.date }}</h4>
+          <div class="single-work__date col-md-4">
+            <h4>{{ $page.work.date }}</h4>
+            <g-link :to=$page.work.link>
+              <g-image src="/img/external-link.svg" class="icon" />
+            </g-link>
+          </div>
         </div>
         <div class="row">
           <div class="single-work__cover col-12">
@@ -98,6 +103,7 @@ query Work ($id: ID, $prevId: ID, $nextId: ID) {
     date (format: "YYYY-MM-DD")
     description
     imgSrc
+    link
     otherImages {
       imgSrc
       imgAlt

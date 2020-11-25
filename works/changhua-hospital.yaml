@@ -7,6 +7,7 @@ description:
   I participated in the site from UI stage, to HTML / SCSS / JS development. Now it is transcribed to razor and work with dotnet framework.
 date: 2020-08-31
 imgSrc: '/img/works/works-chhw.jpg'
+link: https://www.chhw.mohw.gov.tw/zh
 otherImages:
   - imgSrc: '/img/works/works-chhw-page-01.jpg'
     imgAlt: Introduction Section

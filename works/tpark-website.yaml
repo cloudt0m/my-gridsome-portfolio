@@ -7,6 +7,7 @@ description:
   It is built with html template engine first, then use angular for the rest parts. It contains a main website, and a management system site.
 date: 2020-02-10
 imgSrc: '/img/works/works-tpark.jpg'
+link: https://www.tpark.com.tw
 otherImages:
   - imgSrc: '/img/works/works-tpark-page-01.jpg'
     imgAlt: News Section
