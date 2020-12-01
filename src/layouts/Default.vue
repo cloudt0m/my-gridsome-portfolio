@@ -41,8 +41,14 @@
               </li>
 
               <li class="nav-item">
-                <g-link
+                <a v-if="$route.path === '/'"
+                  href="/#about"
+                  v-scroll-to="'#about'"
+                  class="nav-item__link"
+                >About</a>
+                <g-link v-else
                   to="/#about"
+                  v-scroll-to="'#about'"
                   class="nav-item__link"
                 >About</g-link>
               </li>

@@ -18,7 +18,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
       <div class="container about__container">
         <div class="row about__row--top">
           <div class="about__photo col-md-3"></div>

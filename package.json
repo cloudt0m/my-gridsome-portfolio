@@ -16,7 +16,8 @@
     "gridsome-source-static-meta": "^1.0.1",
     "swiper": "^6.3.5",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-clamp": "^0.3.1"
+    "vue-clamp": "^0.3.1",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^3.0.1",

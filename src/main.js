@@ -8,6 +8,7 @@ import {
   Pagination,
 } from 'swiper/swiper.esm';
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter';
+import VueScrollTo from 'vue-scrollto';
 import '~/sass/styles.scss';
 // import '~/sass/github-markdown.css';
 
@@ -16,4 +17,8 @@ export default function(Vue, { router, head, isClient }) {
   SwiperClass.use([Pagination, Navigation]);
   Vue.use(getAwesomeSwiper(SwiperClass));
   const { Swiper, SwiperSlide } = getAwesomeSwiper(SwiperClass);
+  Vue.use(VueScrollTo, {
+    duration: 500,
+    easing: 'ease-out',
+  });
 }
