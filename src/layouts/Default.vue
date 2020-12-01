@@ -17,14 +17,9 @@
                 alt=""
               />
             </g-link>
-            <ul class="nav__items offset-md-2 offset-lg-2 col-md-6 col-lg-4">
+            <ul class="nav__items col-md-8 col-lg-6">
               <li class="nav-item">
-                <button class="nav-item__search">
-                  <g-image
-                    src="/img/search.svg"
-                    alt=""
-                  />
-                </button>
+                <search />
               </li>
 
               <li class="nav-item">
@@ -79,7 +74,12 @@
 </template>
 
 <script>
-export default {};
+import Search from '~/components/Search';
+export default {
+  components: {
+    Search
+  }
+};
 </script>
 
 <style>

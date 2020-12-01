@@ -32,6 +32,24 @@ module.exports = {
         typeName: 'Work',
       },
     },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        searchFields: ['title', 'tags'],
+        collections: [
+          {
+            typeName: 'Post',
+            indexName: 'Post',
+            fields: ['title', 'summary', 'tags'],
+          },
+          {
+            typeName: 'Work',
+            indexName: 'Work',
+            fields: ['title', 'summary'],
+          },
+        ],
+      },
+    },
   ],
   templates: {
     Tag: '/tag/:id',

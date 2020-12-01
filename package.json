@@ -12,9 +12,11 @@
     "@gridsome/vue-remark": "^0.2.5",
     "bootstrap": "^4.5.3",
     "gridsome": "^0.7.0",
+    "gridsome-plugin-flexsearch": "^1.0.5",
     "gridsome-source-static-meta": "^1.0.1",
     "swiper": "^6.3.5",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-clamp": "^0.3.1"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^3.0.1",

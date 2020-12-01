@@ -149,7 +149,11 @@
         <h2 class="section-title">BLOG POSTS</h2>
         <div class="blog__posts row">
 
-          <div class="post-item col-md-4" v-for="post in $static.posts.edges" :key="post.id">
+          <div
+            class="post-item col-md-4"
+            v-for="post in $static.posts.edges"
+            :key="post.id"
+          >
             <div class="post-item__cover">
               <g-image
                 :src="post.node.imgSrc"
@@ -158,7 +162,12 @@
             </div>
             <div class="post-item__description">
               <h4>{{ post.node.title }}</h4>
-              <p>{{ post.node.summary }}</p>
+              <v-clamp
+                autoresize
+                :max-lines="3"
+                class="post-item__description-text"
+              >{{ post.node.summary }}
+              </v-clamp>
               <g-link
                 :to="post.node.path"
                 class="btn btn--primary"
@@ -191,6 +200,7 @@
 
 <script>
 import IndexSlider from "../components/IndexSlider";
+import VClamp from "vue-clamp";
 
 export default {
   metaInfo: {
@@ -198,6 +208,13 @@ export default {
   },
   components: {
     IndexSlider,
+    VClamp,
+  },
+  data() {
+    return {
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    };
   },
 };
 </script>
