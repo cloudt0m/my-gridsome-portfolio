@@ -47,12 +47,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "../sass/base/_variables.scss";
+@import "../sass/base/_mixins.scss";
 
 .search-input {
   border: 1px solid $gray-light;
   padding: 0.5em 1em;
   border-radius: 2em;
-  min-width: 15rem;
+  min-width: 12rem;
   font-size: 1rem;
 }
 
@@ -68,9 +69,9 @@ export default {
 
 .search-results {
   position: absolute;
-  width: 150%;
+  width: 20rem;
   left: 0;
-  top: 5rem;
+  top: 3.5rem;
   display: flex;
   flex-direction: column;
   z-index: 2;
@@ -81,6 +82,9 @@ export default {
   max-height: 30rem;
   overflow: hidden;
   overflow-y: auto;
+  @include atMedium {
+    left: -4rem;
+  }
 }
 .result {
   width: 100%;
