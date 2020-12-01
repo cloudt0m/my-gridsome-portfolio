@@ -3,12 +3,12 @@
     <section class="banner banner--index">
       <div class="container">
         <div class="row banner__row">
-          <div class="banner__words col-lg-5">
+          <div class="banner__words col-lg-6">
             <h1>Hello, <br />I’m Homeway </h1>
-            <h3>I’m a web designer, <br />and a frontend developer</h3>
+            <h3 class="mb-5">I’m a web designer, <br />and a frontend developer</h3>
             <button class="btn btn--secondary">About Myself</button>
           </div>
-          <div class="banner__image col-lg-7">
+          <div class="banner__image col-lg-6">
             <g-image
               src="../../static/img/index-banner.svg"
               alt=""

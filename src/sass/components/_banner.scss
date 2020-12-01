@@ -66,8 +66,9 @@
 
   &__row {
     min-height: calc(97vh - 6em);
-    @include atLarge {
-      min-height: calc(97vh - 10em);
+    @include atMedium {
+      min-height: calc(97vh - 2em);
+      padding-top: 1em;
     }
   }
   &__image {

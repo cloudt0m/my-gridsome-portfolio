@@ -5,21 +5,25 @@
       placeholder="Try search something"
       v-model="searchTerm"
       class="search-input"
+      @blur="isResultVisible = false"
+      @focus="isResultVisible = true"
     >
-    <div
-      class="search-results"
-      v-if="searchResults.length > 0"
-    >
-      <g-link
-        v-for="result in searchResults"
-        :key="result.id"
-        :to="result.path"
-        class="result"
+    <transition name="fade">
+      <div
+        class="search-results"
+        v-if="searchResults.length > 0 && isResultVisible"
       >
-        <h5>{{ result.title }}</h5>
-        <p>{{ result.node.summary }}</p>
-      </g-link>
-    </div>
+        <g-link
+          v-for="result in searchResults"
+          :key="result.id"
+          :to="result.path"
+          class="result"
+        >
+          <h5>{{ result.title }}</h5>
+          <p>{{ result.node.summary }}</p>
+        </g-link>
+      </div>
+    </transition>
     <g-image
       src="/img/search.svg"
       alt=""
@@ -32,6 +36,11 @@
 import Search from "gridsome-plugin-flexsearch/SearchMixin";
 
 export default {
+  data() {
+    return {
+      isResultVisible: false,
+    };
+  },
   mixins: [Search],
 };
 </script>
@@ -69,11 +78,19 @@ export default {
   border-radius: 0.25em;
   filter: drop-shadow(0.2em 0.2em 0.2em rgba($gray, 0.5));
   background: $white;
+  max-height: 30rem;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .result {
   width: 100%;
   border-bottom: 1px solid $gray-light;
   padding: 0.75em;
+  transition: 0.3s;
+  background: transparent;
+  &:hover {
+    background: $gray-lighter;
+  }
   h5 {
     margin-bottom: 0.5em;
   }
@@ -83,5 +100,14 @@ export default {
   &:last-child {
     border: 0;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

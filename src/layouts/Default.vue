@@ -8,16 +8,34 @@
         <div class="nav__topbar"></div>
         <div class="container-fluid nav__container">
           <div class="row nav__row">
-            <g-link
-              to="/"
-              class="nav__logo col-md-4 col-lg-6"
+            <div class="nav__logo col-md-4 col-lg-6">
+              <g-link to="/">
+                <g-image
+                  src="/img/logo.svg"
+                  alt=""
+                />
+              </g-link>
+              <button
+                class="btn hamburger d-md-none"
+                @click="toggleNav"
+              >
+                <svg
+                  class="current-color h-3 w-3"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                    fill="gray"
+                  />
+                </svg>
+
+              </button>
+            </div>
+            <ul
+              class="nav__items col-md-8 col-lg-6"
+              :class="isNavOpen ? 'show' : ''"
             >
-              <g-image
-                src="/img/logo.svg"
-                alt=""
-              />
-            </g-link>
-            <ul class="nav__items col-md-8 col-lg-6">
               <li class="nav-item">
                 <search />
               </li>
@@ -55,7 +73,7 @@
 
       <!-- ================== Block Main Top ================== -->
 
-      <slot/>
+      <slot />
 
       <!-- ================== Block Main Bottom ================== -->
 
@@ -74,11 +92,21 @@
 </template>
 
 <script>
-import Search from '~/components/Search';
+import Search from "~/components/Search";
 export default {
+  data() {
+    return {
+      isNavOpen: false,
+    };
+  },
   components: {
-    Search
-  }
+    Search,
+  },
+  methods: {
+    toggleNav() {
+      this.isNavOpen = !this.isNavOpen;
+    },
+  },
 };
 </script>
 
