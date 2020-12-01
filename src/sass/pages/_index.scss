@@ -86,6 +86,14 @@
       @include flexCentered;
     }
   }
+  &__skill {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include atLarge {
+      flex-direction: row;
+    }
+  }
   &__skill-container {
     @include atMedium {
       text-align: center;
@@ -125,6 +133,7 @@
     margin-bottom: 0;
   }
   @include atMedium {
+    flex: 1 1 50%;
     flex-direction: column;
     justify-content: center;
     img {
@@ -171,6 +180,10 @@
       background: url('../../static/img/memphis-triangle-1.svg') top right
         no-repeat;
       background-size: contain;
+      @include atSmall {
+        right:0;
+        width: 35%;
+      }
     }
     &::after {
       content: '';
@@ -182,10 +195,16 @@
       background: url('../../static/img/memphis-triangle-2.svg') bottom left
         no-repeat;
       background-size: contain;
+      @include atSmall {
+        left:0;
+        width: 35%;
+      }
     }
     @include atLarge {
-      height: 50vh;
       padding: 6em 0;
+    }
+    @include atSmall {
+      padding: 0;
     }
   }
   &__description {
@@ -204,7 +223,14 @@
       height: 100%;
       background: url('../../static/img/memphis-arrow.svg') top right no-repeat;
       background-size: contain;
+      @include atSmall {
+        right: 0;
+        width: 6%;
+      }
     }
+  }
+  @include atSmall {
+    padding: 3em 0;
   }
 }
 
@@ -217,9 +243,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba($color: $blue, $alpha: 0.1);
-    opacity: 1;
     transition: 0.3s ease-out;
+    opacity: 1;
+    background: rgba($color: $blue, $alpha: 0.1);
   }
   &:hover {
     &::after {
@@ -234,7 +260,11 @@
     bottom: 0;
     color: $white;
     font-size: 2rem;
+    text-align: right;
     @include dropShadow($gray);
+    @include atSmall {
+      font-size: 1.5rem;
+    }
   }
 }
 
@@ -250,6 +280,9 @@
   @include atMedium {
     height: 50vh;
   }
+  @include atSmall {
+    height: 28vh;
+  }
 }
 
 .swiper-button {
@@ -264,7 +297,7 @@
       left: -2.5em;
     }
     @include atSmall {
-      left: 1.5em;
+      left: 0.5em;
     }
   }
   &-next {
@@ -274,7 +307,7 @@
       right: -2.5em;
     }
     @include atSmall {
-      right: 1.5em;
+      right: 0.5em;
     }
   }
 }
@@ -334,6 +367,9 @@
       width: 75%;
     }
   }
+  @include atSmall {
+    padding: 3em 0;
+  }
 }
 
 .post-item {
@@ -344,6 +380,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    @include atSmall {
+      height: 12em;
     }
   }
   &__description {
