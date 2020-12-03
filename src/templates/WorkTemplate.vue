@@ -26,7 +26,10 @@
           <div class="single-work__date col-md-4">
             <h4>{{ $page.work.date }}</h4>
             <g-link :to=$page.work.link>
-              <g-image src="/img/external-link.svg" class="icon" />
+              <g-image
+                src="/img/external-link.svg"
+                class="icon"
+              />
             </g-link>
           </div>
         </div>
@@ -44,18 +47,15 @@
           </div>
         </div>
         <div class="row">
-
-          <div
-            v-for="img in $page.work.otherImages"
-            :key="img.id"
-            class="single-work__other-image col-md-4"
-          >
-            <g-image
-              :src=img.imgSrc
-              :alt=img.imgAlt
-            />
-            <h5>{{ img.description }}</h5>
-          </div>
+          <silent-box :gallery="getImgArray($page.work.otherImages)">
+            <template v-slot:silentbox-item="{ silentboxItem }">
+              <g-image
+                :src=silentboxItem.src
+                :alt=silentboxItem.description
+              />
+              <h5>{{ silentboxItem.description }}</h5>
+            </template>
+          </silent-box>
 
         </div>
 
@@ -122,8 +122,41 @@ query Work ($id: ID, $prevId: ID, $nextId: ID) {
 </page-query>
 
 <script>
-export default {};
+export default {
+  methods: {
+    getImgArray(mutatedImgArray) {
+      return mutatedImgArray.map((img) => {
+        return { ...img, src: img.imgSrc.src };
+      });
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="scss">
+@import "../sass/base/_mixins.scss";
+
+#silentbox-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+.silentbox-item {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  h5 {
+    margin-top: 1em;
+  }
+  @include atMedium {
+    max-width: 100%;
+    flex: 1 1 100%;
+    margin-bottom: 1.5em;
+    h5 {
+      text-align: center;
+    }
+  }
+}
 </style>

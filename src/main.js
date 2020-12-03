@@ -9,6 +9,7 @@ import {
 } from 'swiper/swiper.esm';
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter';
 import VueScrollTo from 'vue-scrollto';
+import VueSilentBox from 'vue-silentbox';
 import '~/sass/styles.scss';
 // import '~/sass/github-markdown.css';
 
@@ -21,4 +22,5 @@ export default function(Vue, { router, head, isClient }) {
     duration: 500,
     easing: 'ease-out',
   });
+  Vue.use(VueSilentBox);
 }
