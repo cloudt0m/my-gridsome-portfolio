@@ -1,3 +1,4 @@
+---
 title: Taiwan Expo
 summary:
   Taiwan Expo is a website organized by TAITRA and Bureau of Foreign Trade, provides foreign companies to find Taiwan's suppliers.
@@ -6,15 +7,15 @@ description:
   It features iframe virtual pavilions and live streams as introduction to Taiwan's highlighted industries.
   The website development started from html template engine, scss, and gulp. Then completed html transcribed to razor, works with dotnet backend.
 date: 2020-10-06
-imgSrc: '/img/works/works-expo.jpg'
+imgSrc: './images/works-expo.jpg'
 link: https://taiwanexpo.online
 otherImages:
-  - imgSrc: '/img/works/works-expo-page-01.jpg'
+  - imgSrc: './images/works-expo-page-01.jpg'
     imgAlt: Culture Section
     description: Culture Section
-  - imgSrc: '/img/works/works-expo-page-02.jpg'
+  - imgSrc: './images/works-expo-page-02.jpg'
     imgAlt: Pavilions List
     description: Pavilions List
-  - imgSrc: '/img/works/works-expo-page-03.jpg'
+  - imgSrc: './images/works-expo-page-03.jpg'
     imgAlt: Slider Section
     description: Slider Section

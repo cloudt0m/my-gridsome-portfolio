@@ -18,7 +18,10 @@
       </div>
     </section>
 
-    <section id="about" class="about">
+    <section
+      id="about"
+      class="about"
+    >
       <div class="container about__container">
         <div class="row about__row--top">
           <div class="about__photo col-md-3"></div>
@@ -209,13 +212,7 @@ export default {
   components: {
     IndexSlider,
     VClamp,
-  },
-  data() {
-    return {
-      text:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-    };
-  },
+  }
 };
 </script>
 

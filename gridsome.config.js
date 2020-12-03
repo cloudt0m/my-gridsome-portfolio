@@ -26,10 +26,12 @@ module.exports = {
       },
     },
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/vue-remark',
       options: {
-        path: 'works/**/*.yaml',
-        typeName: 'Work',
+        typeName: 'Work', // Required
+        baseDir: './works', // Where .md files are located
+        pathPrefix: '/works', // Add route prefix. Optional
+        template: './src/templates/WorkTemplate.vue', // Optional
       },
     },
     {
