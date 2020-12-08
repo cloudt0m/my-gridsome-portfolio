@@ -6,7 +6,11 @@
           <div class="banner__words col-lg-6">
             <h1>Hello, <br />I’m Homeway </h1>
             <h3 class="mb-5">I’m a web designer, <br />and a frontend developer</h3>
-            <button class="btn btn--secondary">About Myself</button>
+            <a
+              href="#about"
+              v-scroll-to="'#about'"
+              class="btn btn--secondary"
+            >About Myself</a>
           </div>
           <div class="banner__image col-lg-6">
             <g-image
@@ -212,7 +216,7 @@ export default {
   components: {
     IndexSlider,
     VClamp,
-  }
+  },
 };
 </script>
 

@@ -96,8 +96,8 @@
 }
 
 @mixin dropShadow($shadow-color) {
-  filter: drop-shadow(0.15rem 0.15rem 0.25rem $shadow-color);
-  // box-shadow: 0.15rem 0.15rem 0.25rem $shadow-color;
+  // filter: drop-shadow(0.15rem 0.15rem 0.25rem $shadow-color);
+  box-shadow: 0.1rem 0.1rem 0.5rem $shadow-color;
 }
 
 @mixin playIcon {

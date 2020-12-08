@@ -5,7 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700');
 
 html {
-  overflow: hidden;
+  // overflow: hidden; // may make hash link not working
+  // --scroll-behavior: smooth;
+  // scroll-behavior: smooth;
   height: 100%;
 }
 
@@ -169,4 +171,10 @@ th {
     border-radius: 1rem;
     background-color: rgba($color: $gray-light, $alpha: 0.5);
   }
+}
+
+input[type='text'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
