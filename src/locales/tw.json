@@ -1,0 +1,25 @@
+{
+  "welcome": {
+    "title": "嗨！<br />我是Homeway",
+    "description": "這是一個平面設計師<br />及前端工程師的個人網站"
+  },
+  "about": "關於",
+  "aboutMyself": "關於我",
+  "aboutDescription": "一個喜歡拍照、聽音樂的攻城獅。我喜歡接觸新知及學習，對於有關視覺的領域特別有興趣。身為一個工程師，除了鑽研自己的程式技術外，也持續在閒暇時間充實自己。希望能以自己的知識幫助更多的人。",
+  "aboutExperience": "我熟悉下列技術：",
+  "aboutSkills": [
+    "HTML / CSS / SCSS",
+    "HTML 樣版引擎(pug, ejs, twig)",
+    "JavaScript / TypeScript",
+    "Angular / Vue",
+    "Git / 版本管控",
+    "UI設計"
+  ],
+  "works": "作品",
+  "worksDescription": "以上是我最近參與的網站<br />還有更多的作品實例！",
+  "worksButton": "看更多",
+  "blog": "日誌",
+  "blogPosts": "日誌",
+  "readButton": "閱讀",
+  "trySearch": "輸入文字搜尋"
+}

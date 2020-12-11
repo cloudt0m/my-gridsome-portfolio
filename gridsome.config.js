@@ -52,6 +52,14 @@ module.exports = {
         ],
       },
     },
+    {
+      use: 'gridsome-plugin-i18n',
+      options: {
+        locales: ['tw', 'en'],
+        defaultLocale: 'tw',
+        messages: {},
+      },
+    },
   ],
   templates: {
     Tag: '/tag/:id',

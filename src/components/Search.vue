@@ -2,7 +2,7 @@
   <div class="nav-item__search">
     <input
       type="text"
-      placeholder="Try search something"
+      :placeholder="$t('trySearch')"
       v-model="searchTerm"
       class="search-input"
       @blur="isResultVisible = false"

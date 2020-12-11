@@ -4,13 +4,16 @@
       <div class="container">
         <div class="row banner__row">
           <div class="banner__words col-lg-6">
-            <h1>Hello, <br />I’m Homeway </h1>
-            <h3 class="mb-5">I’m a web designer, <br />and a frontend developer</h3>
+            <h1 v-html="$t('welcome.title')"></h1>
+            <h3
+              class="mb-5"
+              v-html="$t('welcome.description')"
+            ></h3>
             <a
               href="#about"
               v-scroll-to="'#about'"
               class="btn btn--secondary"
-            >About Myself</a>
+            >{{ $t('aboutMyself') }}</a>
           </div>
           <div class="banner__image col-lg-6">
             <g-image
@@ -30,7 +33,7 @@
         <div class="row about__row--top">
           <div class="about__photo col-md-3"></div>
           <div class="about__description offset-md-1 col-md-8">
-            <p>I’m a developer who have enthusiasm on thinking and trying, and have experience on building web apps. I keep learning in my free time, and make my code better and better.</p>
+            <p>{{ $t('aboutDescription') }}</p>
             <ul class="about__social-links">
 
               <li class="social-link">
@@ -50,73 +53,22 @@
         <div class="row about__row--bottom">
           <div class="about__skill-container col-md-4">
             <p class="about__skill-description">
-              I’m experienced at following:
+              {{ $t('aboutExperience') }}
             </p>
             <ul class="about__skill">
 
-              <li class="skill-item">
+              <li
+                class="skill-item"
+                v-for="skill in $t('aboutSkills')"
+                :key="skill.id"
+              >
                 <g-image
                   class="icon"
                   src="../../static/img/list-icon.svg"
                   alt=""
                 />
                 <p>
-                  HTML / CSS / SCSS
-                </p>
-              </li>
-
-              <li class="skill-item">
-                <g-image
-                  class="icon"
-                  src="../../static/img/list-icon.svg"
-                  alt=""
-                />
-                <p>
-                  HTML Template Engine
-                </p>
-              </li>
-
-              <li class="skill-item">
-                <g-image
-                  class="icon"
-                  src="../../static/img/list-icon.svg"
-                  alt=""
-                />
-                <p>
-                  JavaScript / TypeScript
-                </p>
-              </li>
-
-              <li class="skill-item">
-                <g-image
-                  class="icon"
-                  src="../../static/img/list-icon.svg"
-                  alt=""
-                />
-                <p>
-                  Angular / Vue
-                </p>
-              </li>
-
-              <li class="skill-item">
-                <g-image
-                  class="icon"
-                  src="../../static/img/list-icon.svg"
-                  alt=""
-                />
-                <p>
-                  Git / Version Control
-                </p>
-              </li>
-
-              <li class="skill-item">
-                <g-image
-                  class="icon"
-                  src="../../static/img/list-icon.svg"
-                  alt=""
-                />
-                <p>
-                  UI Design
+                  {{ skill }}
                 </p>
               </li>
 
@@ -134,14 +86,14 @@
 
     <section class="works">
       <div class="container works__container">
-        <h2 class="section-title">WORKS</h2>
+        <h2 class="section-title">{{ $t('works') | toUppercase }}</h2>
         <index-slider />
         <div class="works__description">
-          <p>Wanna see more?<br />Here’s the collection of website works during these years.</p>
+          <p v-html="$t('worksDescription')"></p>
           <g-link
             to="/works"
             class="btn btn--primary"
-          >More Works</g-link>
+          >{{ $t('worksButton') }}</g-link>
         </div>
       </div>
     </section>
@@ -153,12 +105,12 @@
         alt=""
       />
       <div class="container blog__container">
-        <h2 class="section-title">BLOG POSTS</h2>
+        <h2 class="section-title">{{ $t('blogPosts') | toUppercase }}</h2>
         <div class="blog__posts row">
 
           <div
             class="post-item col-md-4"
-            v-for="post in $static.posts.edges"
+            v-for="post in $page.posts.edges"
             :key="post.id"
           >
             <div class="post-item__cover">
@@ -178,7 +130,7 @@
               <g-link
                 :to="post.node.path"
                 class="btn btn--primary"
-              >Read</g-link>
+              >{{ $t('readButton') }}</g-link>
             </div>
           </div>
 
@@ -189,9 +141,9 @@
   </Layout>
 </template>
 
-<static-query>
-  query {
-    posts: allPost {
+<page-query>
+  query($locale: String!) {
+    posts: allPost(filter: {lang: {eq: $locale }}) {
       edges {
         node {
           title
@@ -203,7 +155,7 @@
       }
     }
   }
-</static-query>
+</page-query>
 
 <script>
 import IndexSlider from "../components/IndexSlider";

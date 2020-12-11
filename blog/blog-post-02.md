@@ -5,6 +5,7 @@ date: 2019-03-07
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
 tags: ['design', 'frontend']
 imgSrc: "./images/blog_bg_4.jpg"
+lang: en
 ---
 
 ![cover](./images/blog_bg_4.jpg)

@@ -45,26 +45,26 @@
                   href="/#about"
                   v-scroll-to="'#about'"
                   class="nav-item__link"
-                >About</a>
+                >{{ $t('about') | toUppercase }}</a>
                 <g-link v-else
                   to="/#about"
                   v-scroll-to="'#about'"
                   class="nav-item__link"
-                >About</g-link>
+                >{{ $t('about') | toUppercase }}</g-link>
               </li>
 
               <li class="nav-item">
                 <g-link
                   to="/works"
                   class="nav-item__link"
-                >Works</g-link>
+                >{{ $t('works') | toUppercase }}</g-link>
               </li>
 
               <li class="nav-item">
                 <g-link
                   to="/blog"
                   class="nav-item__link"
-                >Blog</g-link>
+                >{{ $t('blog') | toUppercase }}</g-link>
               </li>
 
             </ul>

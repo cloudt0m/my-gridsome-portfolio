@@ -2,6 +2,7 @@
 title: A cool title
 summary: Lorem Ipsum is simply dummy text.
 imgSrc: "./images/blog_bg_1.jpg"
+lang: tw
 ---
 // Import any Vue Component. Even other .md files!
 import YouTube from '~/components/YouTube.vue'

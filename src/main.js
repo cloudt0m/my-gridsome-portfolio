@@ -13,7 +13,7 @@ import VueSilentBox from 'vue-silentbox';
 import '~/sass/styles.scss';
 // import '~/sass/github-markdown.css';
 
-export default function(Vue, { router, head, isClient }) {
+export default function(Vue, { appOptions, router, head, isClient }) {
   Vue.component('Layout', Layout);
   SwiperClass.use([Pagination, Navigation]);
   Vue.use(getAwesomeSwiper(SwiperClass));
@@ -23,4 +23,12 @@ export default function(Vue, { router, head, isClient }) {
     easing: 'ease-out',
   });
   Vue.use(VueSilentBox);
+  appOptions.i18n.setLocaleMessage('en', require('../src/locales/en.json'));
+  appOptions.i18n.setLocaleMessage('tw', require('../src/locales/tw.json'));
+
+  Vue.filter('toUppercase', function(value) {
+    if (!value) return '';
+    value = value.toString();
+    return value.toUpperCase();
+  });
 }

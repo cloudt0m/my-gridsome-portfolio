@@ -1,0 +1,25 @@
+{
+  "welcome": {
+    "title": "Hello, <br />I’m Homeway",
+    "description": "I’m a graphic designer, <br />and a frontend developer"
+  },
+  "about": "about",
+  "aboutMyself": "About Myself",
+  "aboutDescription": "I’m a developer who have enthusiasm on thinking and trying, and have experience on building web apps. I keep learning in my free time, and make my code better and better.",
+  "aboutExperience": "I’m experienced at following:",
+  "aboutSkills": [
+    "HTML / CSS / SCSS",
+    "HTML Template Engine",
+    "JavaScript / TypeScript",
+    "Angular / Vue",
+    "Git / Version Control",
+    "UI Design"
+  ],
+  "works": "works",
+  "worksDescription": "Wanna see more?<br />Here’s the collection of website works during these years.",
+  "worksButton": "More Works",
+  "blog": "blog",
+  "blogPosts": "blog posts",
+  "readButton": "Read",
+  "trySearch": "Try Search Something"
+}
