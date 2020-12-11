@@ -67,6 +67,10 @@
                 >{{ $t('blog') | toUppercase }}</g-link>
               </li>
 
+              <li class="nav-item">
+                <lang-switcher />
+              </li>
+
             </ul>
           </div>
         </div>
@@ -99,6 +103,8 @@
 
 <script>
 import Search from "~/components/Search";
+import LangSwitcher from "~/components/LangSwitcher";
+
 export default {
   data() {
     return {
@@ -107,6 +113,7 @@ export default {
   },
   components: {
     Search,
+    LangSwitcher
   },
   methods: {
     toggleNav() {
