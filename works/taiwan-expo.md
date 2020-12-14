@@ -1,5 +1,6 @@
 ---
 title: Taiwan Expo
+lang: en
 summary:
   Taiwan Expo is a website organized by TAITRA and Bureau of Foreign Trade, provides foreign companies to find Taiwan's suppliers.
 description:

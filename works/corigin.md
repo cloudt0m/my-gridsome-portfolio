@@ -1,5 +1,6 @@
 ---
 title: Corigin
+lang: en
 summary:
   Corigin is a simple e-commerce website. I took the role in overall design and HTML / angular development.
 description:

@@ -55,8 +55,8 @@
 </template>
 
 <page-query>
-query {
-  works: allWork {
+query($locale: String!) {
+  works: allWork(filter: {lang: {eq: $locale}}) {
     edges {
       node {
         id

@@ -1,6 +1,6 @@
 ---
-title: Changhua Hospital Website
-lang: en
+title: 彰化醫院
+lang: tw
 summary:
   The website is a renewal of old one. The old version of the site was not easy to use, and designed in old resolution specification.
 description:

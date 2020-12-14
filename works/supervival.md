@@ -1,5 +1,6 @@
 ---
 title: Supervival
+lang: en
 summary:
   Supervival is a simple one page official website. The site uses the fullpage plugin to make the scrolling animation.
 description:

@@ -44,8 +44,8 @@
 </template>
 
 <page-query>
-query {
-	posts: allPost {
+query($locale: String!) {
+	posts: allPost(filter: {lang: {eq: $locale}}) {
     edges {
       node {
         id

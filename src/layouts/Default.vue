@@ -41,12 +41,14 @@
               </li>
 
               <li class="nav-item">
-                <a v-if="$route.path === '/'"
+                <a
+                  v-if="$route.path === '/'"
                   href="/#about"
                   v-scroll-to="'#about'"
                   class="nav-item__link"
                 >{{ $t('about') | toUppercase }}</a>
-                <g-link v-else
+                <g-link
+                  v-else
                   to="/#about"
                   v-scroll-to="'#about'"
                   class="nav-item__link"
@@ -113,12 +115,15 @@ export default {
   },
   components: {
     Search,
-    LangSwitcher
+    LangSwitcher,
   },
   methods: {
     toggleNav() {
       this.isNavOpen = !this.isNavOpen;
     },
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
 };
 </script>

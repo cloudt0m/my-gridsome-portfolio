@@ -7,7 +7,10 @@
       v-for="lang in availableLang"
       :key="lang"
       :value="lang"
-    >{{ lang | toUppercase }}</option>
+    >
+      <template v-if="lang == 'tw'">中文</template>
+      <template v-else>{{ lang | toUppercase }}</template>
+    </option>
   </select>
 </template>
 
@@ -30,7 +33,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  select {
-    font-size: 1rem;
-  }
+select {
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 5px;
+  margin-right: 2rem;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+}
 </style>
