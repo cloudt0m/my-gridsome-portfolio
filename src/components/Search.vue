@@ -33,15 +33,49 @@
 </template>
 
 <script>
-import Search from "gridsome-plugin-flexsearch/SearchMixin";
+import FlexSearch from "flexsearch";
 
 export default {
   data() {
     return {
       isResultVisible: false,
+      searchTerm: "",
+      search: null,
     };
   },
-  mixins: [Search],
+  computed: {
+    searchResults() {
+      const searchTerm = this.searchTerm;
+      if (searchTerm.length < 3) return [];
+      const results = this.search.search({
+        query: searchTerm,
+        limit: 5,
+        suggest: true,
+      });
+      console.log(results);
+      return results;
+    },
+  },
+  async mounted() {
+    // Some flexsearch options, and helper functions
+    const { flexsearch, loadIndex } = this.$flexsearch;
+    // Create a flexsearch instance, and load our config options, plus our custom tokenizer function
+    const search = new FlexSearch({
+      ...flexsearch,
+      tokenize: function (str) {
+        const chineseStringArray = str.replace(/[\x00-\x7F]/g, "").split("");
+        if (chineseStringArray.length > 0) {
+          return chineseStringArray;
+        } else {
+          return str.split("");
+        }
+      },
+    });
+    // Make search available on this
+    this.search = search;
+    // Load our index data into flexsearch
+    await loadIndex(search);
+  },
 };
 </script>
 

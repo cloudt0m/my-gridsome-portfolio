@@ -37,6 +37,7 @@ module.exports = {
     {
       use: 'gridsome-plugin-flexsearch',
       options: {
+        autoSetup: false,
         searchFields: ['title', 'tags', 'summary'],
         collections: [
           {
@@ -50,6 +51,19 @@ module.exports = {
             fields: ['title', 'summary'],
           },
         ],
+        flexsearch: {
+          encode: false,
+          tokenize: function(str) {
+            const chineseStringArray = str
+              .replace(/[\x00-\x7F]/g, '')
+              .split('');
+            if (chineseStringArray.length > 0) {
+              return chineseStringArray;
+            } else {
+              return str.split('');
+            }
+          },
+        },
       },
     },
     {
