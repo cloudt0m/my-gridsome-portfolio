@@ -13,10 +13,10 @@ link: https://gohomenow.cf/corigin/
 otherImages:
   - imgSrc: './images/works-corigin-page-01.jpg'
     imgAlt: Introduction Section 1
-    description: Taiwan Expo Home Page
+    description: Introduction Section 1
   - imgSrc: './images/works-corigin-page-02.jpg'
     imgAlt: Introduction Section 2
-    description: Taiwan Expo Home Page
+    description: Introduction Section 2
   - imgSrc: './images/works-corigin-page-03.jpg'
-    imgAlt: Taiwan Expo Home Page
+    imgAlt: Product Page
     description: Product Page
