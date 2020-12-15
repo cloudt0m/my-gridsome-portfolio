@@ -47,5 +47,10 @@ select {
   margin-right: 2rem;
   padding: 0.5rem;
   padding-right: 1.5rem;
+  &:active,
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
 }
 </style>

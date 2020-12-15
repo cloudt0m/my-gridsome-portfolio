@@ -34,10 +34,10 @@
                 class="btn btn--sm btn--gray"
                 v-for="tag in $page.post.tags"
                 :key="tag.id"
-              >{{ tag.title }}</g-link>
+              >{{ tag.title }}</g-link> 
             </div>
             <g-link
-              to="/blog"
+              :to="'/' + $context.locale + '/blog'"
               class="btn btn--bordered"
             >Back to the list</g-link>
           </div>

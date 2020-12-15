@@ -9,7 +9,7 @@
         <div class="container-fluid nav__container">
           <div class="row nav__row">
             <div class="nav__logo col-md-4 col-lg-6">
-              <g-link to="/">
+              <g-link :to="'/' + $context.locale">
                 <g-image
                   src="/img/logo.svg"
                   alt=""
@@ -49,7 +49,7 @@
                 >{{ $t('about') | toUppercase }}</a>
                 <g-link
                   v-else
-                  to="/#about"
+                  :to="'/' + $context.locale + '/#about'"
                   v-scroll-to="'#about'"
                   class="nav-item__link"
                 >{{ $t('about') | toUppercase }}</g-link>
@@ -57,14 +57,14 @@
 
               <li class="nav-item">
                 <g-link
-                  to="/works"
+                  :to="'/' + $context.locale +'/works'"
                   class="nav-item__link"
                 >{{ $t('works') | toUppercase }}</g-link>
               </li>
 
               <li class="nav-item">
                 <g-link
-                  to="/blog"
+                  :to="'/' + $context.locale + '/blog'"
                   class="nav-item__link"
                 >{{ $t('blog') | toUppercase }}</g-link>
               </li>

@@ -33,9 +33,9 @@
             <h5 class="posts-list-item__date">{{ post.node.date }}</h5>
             <p class="posts-list-item__description j-post-description">{{ post.node.summary }}</p>
             <g-link
-              :to="post.node.path"
+              :to="'/' + $context.locale + post.node.path"
               class="btn btn--primary"
-            >More</g-link>
+            >{{ $t('more') }}</g-link>
           </div>
         </div>
       </div>

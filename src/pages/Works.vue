@@ -43,9 +43,9 @@
 
             </p>
             <g-link
-              :to="work.node.path"
+              :to="'/' + $context.locale + work.node.path"
               class="btn btn--primary"
-            >More</g-link>
+            >{{ $t('more') }}</g-link>
           </div>
         </div>
 

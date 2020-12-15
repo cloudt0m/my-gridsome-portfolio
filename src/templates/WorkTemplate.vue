@@ -63,7 +63,7 @@
 
           <div class="single-work__fast-link single-work__fast-link--prev col-6">
             <template v-if=$page.prev>
-              <g-link :to=$page.prev.path>
+              <g-link :to="'/' + $context.locale + $page.prev.path">
                 <g-image
                   src="/img/slider-prev.svg"
                   alt=""
@@ -78,7 +78,7 @@
             class="single-work__fast-link single-work__fast-link--next col-6"
           >
             <template v-if=$page.next>
-              <g-link :to=$page.next.path>
+              <g-link :to="'/' + $context.locale + $page.next.path">
                 <h4>{{ $page.next.title }}</h4>
                 <g-image
                   src="/img/slider-next.svg"
