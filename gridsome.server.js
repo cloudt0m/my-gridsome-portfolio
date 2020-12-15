@@ -18,6 +18,7 @@ module.exports = function(api) {
             node {
               id
               path
+              lang
             }
           }
         }
@@ -25,8 +26,12 @@ module.exports = function(api) {
     `);
 
     result.data.allWork.edges.forEach((edge, i, edges) => {
-      const prev = edges[i - 1];
-      const next = edges[i + 1];
+      const sameLanguageEdges = edges.filter(
+        (e) => e.node.lang == edge.node.lang
+      );
+      const index = sameLanguageEdges.indexOf(edge);
+      const prev = sameLanguageEdges[index - 1];
+      const next = sameLanguageEdges[index + 1];
 
       createPage({
         path: edge.node.path,

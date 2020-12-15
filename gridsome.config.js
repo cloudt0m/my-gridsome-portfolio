@@ -15,6 +15,7 @@ module.exports = {
       options: {
         typeName: 'Post', // Required
         baseDir: './blog', // Where .md files are located
+        pathPrefix: '/blog',
         template: './src/templates/PostTemplate.vue', // Optional
         refs: {
           tags: {
@@ -29,6 +30,7 @@ module.exports = {
       options: {
         typeName: 'Work', // Required
         baseDir: './works', // Where .md files are located
+        pathPrefix: '/works',
         template: './src/templates/WorkTemplate.vue', // Optional
       },
     },
