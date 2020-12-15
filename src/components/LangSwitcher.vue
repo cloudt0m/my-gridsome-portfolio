@@ -24,8 +24,18 @@ export default {
   },
   methods: {
     langChanged() {
+      const currentPath = this.$route.path;
+      let nextPath;
+      const blogRegex = /(blog\/[a-z])\w+/;
+      const worksRegex = /(works\/[a-z])\w+/;
+      if (currentPath.match(blogRegex)) {
+        nextPath = "/" + this.$context.locale + "/blog";
+      }
+      if (currentPath.match(worksRegex)) {
+        nextPath = "/" + this.$context.locale + "/works";
+      }
       this.$router.push({
-        path: this.$tp(this.$route.path, this.currentLang, true),
+        path: this.$tp(nextPath ? nextPath : this.$route.path, this.currentLang, true),
       });
     },
   },
