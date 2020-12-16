@@ -14,9 +14,9 @@
         v-if="searchResults.length > 0 && isResultVisible"
       >
         <g-link
-          v-for="result in searchResults"
-          :key="result.id"
-          :to="result.path"
+          v-for="(result, index) in searchResults"
+          :key="index"
+          :to="$context.locale + '/' + result.path"
           class="result"
         >
           <h5>{{ result.title }}</h5>
@@ -52,8 +52,10 @@ export default {
         limit: 5,
         suggest: true,
       });
-      console.log(results);
-      return results;
+      const currentLangResults = results.filter(
+        (res) => res.node.lang == this.$context.locale
+      );
+      return currentLangResults;
     },
   },
   async mounted() {
@@ -63,11 +65,19 @@ export default {
     const search = new FlexSearch({
       ...flexsearch,
       tokenize: function (str) {
-        const chineseStringArray = str.replace(/[\x00-\x7F]/g, "").split("");
-        if (chineseStringArray.length > 0) {
-          return chineseStringArray;
+        const chineseStringArray = str
+          .split("")
+          .filter((char) => /\p{Script=Han}/u.test(char));
+        const englishStringArray = str
+          .toLowerCase()
+          .match(/\p{Script=Han}+|\p{Script=Latin}+/gu);
+        if (str.match(/\p{Script=Han}/u)) {
+          return [
+            ...chineseStringArray,
+            ...(englishStringArray ? englishStringArray : []),
+          ];
         } else {
-          return str.split("");
+          return englishStringArray;
         }
       },
     });

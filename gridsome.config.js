@@ -43,24 +43,30 @@ module.exports = {
           {
             typeName: 'Post',
             indexName: 'Post',
-            fields: ['title', 'summary', 'tags'],
+            fields: ['title', 'summary', 'tags', 'lang'],
           },
           {
             typeName: 'Work',
             indexName: 'Work',
-            fields: ['title', 'summary'],
+            fields: ['title', 'summary', 'lang'],
           },
         ],
         flexsearch: {
           encode: false,
           tokenize: function(str) {
             const chineseStringArray = str
-              .replace(/[\x00-\x7F]/g, '')
-              .split('');
-            if (chineseStringArray.length > 0) {
-              return chineseStringArray;
+              .split('')
+              .filter((char) => /\p{Script=Han}/u.test(char));
+            const englishStringArray = str
+              .toLowerCase()
+              .match(/\p{Script=Han}+|\p{Script=Latin}+/gu);
+            if (str.match(/\p{Script=Han}/u)) {
+              return [
+                ...chineseStringArray,
+                ...(englishStringArray ? englishStringArray : []),
+              ];
             } else {
-              return str.split('');
+              return englishStringArray;
             }
           },
         },
