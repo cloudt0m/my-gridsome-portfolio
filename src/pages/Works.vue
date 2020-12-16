@@ -25,7 +25,7 @@
         <div
           class="works-list-item row"
           v-for="work in $page.works.edges"
-          :key="work.id"
+          :key="work.node.id"
         >
           <div class="works-list-item__cover">
             <g-image

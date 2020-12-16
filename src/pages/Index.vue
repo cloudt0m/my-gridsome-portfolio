@@ -87,7 +87,7 @@
     <section class="works">
       <div class="container works__container">
         <h2 class="section-title">{{ $t('works') | toUppercase }}</h2>
-        <index-slider />
+        <index-slider :works="$page.works.edges" />
         <div class="works__description">
           <p v-html="$t('worksDescription')"></p>
           <g-link
@@ -150,6 +150,15 @@
           summary
           path
           date (format: "YYYY-MM-DD")
+          imgSrc
+        }
+      }
+    }
+    works: allWork(filter: {lang: {eq: $locale}}) {
+      edges {
+        node {
+          title
+          path
           imgSrc
         }
       }

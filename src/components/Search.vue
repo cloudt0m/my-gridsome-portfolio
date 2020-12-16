@@ -70,7 +70,7 @@ export default {
           .filter((char) => /\p{Script=Han}/u.test(char));
         const englishStringArray = str
           .toLowerCase()
-          .match(/\p{Script=Han}+|\p{Script=Latin}+/gu);
+          .match(/\p{Script=Latin}+/gu);
         if (str.match(/\p{Script=Han}/u)) {
           return [
             ...chineseStringArray,
