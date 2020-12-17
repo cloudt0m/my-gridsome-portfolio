@@ -35,44 +35,6 @@ module.exports = {
       },
     },
     {
-      use: 'gridsome-plugin-flexsearch',
-      options: {
-        autoSetup: false,
-        searchFields: ['title', 'tags', 'summary'],
-        collections: [
-          {
-            typeName: 'Post',
-            indexName: 'Post',
-            fields: ['title', 'summary', 'tags', 'lang'],
-          },
-          {
-            typeName: 'Work',
-            indexName: 'Work',
-            fields: ['title', 'summary', 'lang'],
-          },
-        ],
-        flexsearch: {
-          encode: false,
-          tokenize: function(str) {
-            const chineseStringArray = str
-              .split('')
-              .filter((char) => /\p{Script=Han}/u.test(char));
-            const englishStringArray = str
-              .toLowerCase()
-              .match(/\p{Script=Han}+|\p{Script=Latin}+/gu);
-            if (str.match(/\p{Script=Han}/u)) {
-              return [
-                ...chineseStringArray,
-                ...(englishStringArray ? englishStringArray : []),
-              ];
-            } else {
-              return englishStringArray;
-            }
-          },
-        },
-      },
-    },
-    {
       use: 'gridsome-plugin-i18n',
       options: {
         locales: ['tw', 'en'],

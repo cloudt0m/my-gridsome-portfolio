@@ -10,6 +10,7 @@ import {
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter';
 import VueScrollTo from 'vue-scrollto';
 import VueSilentBox from 'vue-silentbox';
+import VueFuse from 'vue-fuse';
 import '~/sass/styles.scss';
 // import '~/sass/github-markdown.css';
 
@@ -31,4 +32,5 @@ export default function(Vue, { appOptions, router, head, isClient }) {
     value = value.toString();
     return value.toUpperCase();
   });
+  Vue.use(VueFuse);
 }

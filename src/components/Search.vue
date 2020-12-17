@@ -3,24 +3,26 @@
     <input
       type="text"
       :placeholder="$t('trySearch')"
-      v-model="searchTerm"
+      v-model="query"
       class="search-input"
+      @input="softReset"
+      @keyup="performSearch"
       @blur="isResultVisible = false"
       @focus="isResultVisible = true"
     >
     <transition name="fade">
       <div
         class="search-results"
-        v-if="searchResults.length > 0 && isResultVisible"
+        v-if="results.length > 0 && isResultVisible"
       >
         <g-link
-          v-for="(result, index) in searchResults"
+          v-for="(result, index) in results"
           :key="index"
-          :to="$context.locale + '/' + result.path"
+          :to="$context.locale + '/' + result.item.path"
           class="result"
         >
-          <h5>{{ result.title }}</h5>
-          <p>{{ result.node.summary }}</p>
+          <h5>{{ result.item.title }}</h5>
+          <p>{{ result.item.summary }}</p>
         </g-link>
       </div>
     </transition>
@@ -32,59 +34,95 @@
   </div>
 </template>
 
-<script>
-import FlexSearch from "flexsearch";
+<static-query>
+query {
+  allPost {
+    edges {
+      node {
+        id
+        path
+        title
+        summary
+        lang
+        tags {
+          title
+        }
+      }
+    }
+  }
+  allWork {
+    edges {
+      node {
+        id
+        path
+        title
+        summary
+        lang
+      }
+    }
+  }
+}
+</static-query>
 
+<script>
 export default {
   data() {
     return {
+      query: "",
+      results: [],
       isResultVisible: false,
-      searchTerm: "",
-      search: null,
+      options: {
+        shouldSort: true,
+        includeMatches: true,
+        threshold: 0.5,
+        location: 0,
+        distance: 500,
+        maxPatternLength: 32,
+        minMatchCharLength: 1,
+        keys: ["title", "summary", "tags"],
+      },
     };
   },
-  computed: {
-    searchResults() {
-      const searchTerm = this.searchTerm;
-      if (searchTerm.length < 3) return [];
-      const results = this.search.search({
-        query: searchTerm,
-        limit: 5,
-        suggest: true,
+  methods: {
+    reset() {
+      this.query = "";
+    },
+    softReset() {
+      this.isResultVisible = true;
+    },
+    performSearch() {
+      this.$search(this.query, this.pages, this.options).then((res) => {
+        this.results = res;
       });
-      const currentLangResults = results.filter(
-        (res) => res.node.lang == this.$context.locale
-      );
-      return currentLangResults;
     },
   },
-  async mounted() {
-    // Some flexsearch options, and helper functions
-    const { flexsearch, loadIndex } = this.$flexsearch;
-    // Create a flexsearch instance, and load our config options, plus our custom tokenizer function
-    const search = new FlexSearch({
-      ...flexsearch,
-      tokenize: function (str) {
-        const chineseStringArray = str
-          .split("")
-          .filter((char) => /\p{Script=Han}/u.test(char));
-        const englishStringArray = str
-          .toLowerCase()
-          .match(/\p{Script=Latin}+/gu);
-        if (str.match(/\p{Script=Han}/u)) {
-          return [
-            ...chineseStringArray,
-            ...(englishStringArray ? englishStringArray : []),
-          ];
-        } else {
-          return englishStringArray;
-        }
-      },
-    });
-    // Make search available on this
-    this.search = search;
-    // Load our index data into flexsearch
-    await loadIndex(search);
+  computed: {
+    pages() {
+      let results = [];
+      const allPosts = this.$static.allPost.edges
+        .map((edge) => edge.node)
+        .filter((page) => page.lang == this.$context.locale);
+      allPosts.forEach((page) => {
+        const tags = page.tags.map((tag) => tag.title);
+        results.push({
+          path: page.path,
+          title: page.title,
+          summary: page.summary,
+          tags,
+        });
+      });
+      const allWorks = this.$static.allWork.edges
+        .map((edge) => edge.node)
+        .filter((page) => page.lang == this.$context.locale);
+      allWorks.forEach((page) => {
+        results.push({
+          path: page.path,
+          title: page.title,
+          summary: page.summary,
+        });
+      });
+      return results;
+    },
   },
 };
 </script>
