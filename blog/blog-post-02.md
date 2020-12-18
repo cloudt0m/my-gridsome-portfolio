@@ -1,6 +1,6 @@
 ---
 title: Design for Developers
-date: 2019-03-07
+date: 2020-11-11
 summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
 tags: ['design', 'frontend']
 imgSrc: "./images/blog_bg_4.jpg"

@@ -26,21 +26,23 @@
             <h2 class="post-list-item__title">Tag: {{ $page.tag.title }}</h2>
           </div>
         </div>
-        <div
-          class="row"
-          v-for="post in $page.tag.belongsTo.edges"
-          :key="post.node.id"
-        >
-          <div class="posts-list-item col-12">
-            <h2 class="posts-list-item__title">{{ post.node.title }}</h2>
-            <h5 class="posts-list-item__date">{{ post.node.date }}</h5>
-            <p class="posts-list-item__description j-post-description">{{ post.node.summary }}</p>
-            <g-link
-              :to="post.node.path"
-              class="btn btn--primary"
-            >More</g-link>
+        <template v-for="post in $page.tag.belongsTo.edges">
+          <div
+            class="row"
+            v-if="post.node.lang == $context.locale"
+            :key="post.node.id"
+          >
+            <div class="posts-list-item col-12">
+              <h2 class="posts-list-item__title">{{ post.node.title }}</h2>
+              <h5 class="posts-list-item__date">{{ post.node.date }}</h5>
+              <p class="posts-list-item__description j-post-description">{{ post.node.summary }}</p>
+              <g-link
+                :to="post.node.path"
+                class="btn btn--primary"
+              >{{ $t('more') }}</g-link>
+            </div>
           </div>
-        </div>
+        </template>
         <div class="row">
           <div class="col-12">
             <paging
@@ -73,6 +75,7 @@ query Tag ($id: ID!, $page: Int) {
             date (format: "YYYY-MM-DD")
             path
             summary
+            lang
             tags {
               title
             }

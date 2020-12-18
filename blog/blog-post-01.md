@@ -1,20 +1,12 @@
 ---
-title: A cool title
-summary: Lorem Ipsum is simply dummy text.
+title: Test Post
+date: 2020-11-11
+summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus
+tags: ['design', 'frontend']
 imgSrc: "./images/blog_bg_1.jpg"
 lang: tw
 ---
-// Import any Vue Component. Even other .md files!
-import YouTube from '~/components/YouTube.vue'
-import AboutUs from '~/sections/AboutUs.md'
 
-// Import any JSON if you need data.
-import data from '~/data/youtube.json'
+![cover](./images/blog_bg_1.jpg)
 
-// Use front-matter fields anywhere.
-# {{ $frontmatter.title }}
-> {{ $frontmatter.summary }}
-
-// Use your imported Vue Components.
-<!-- <YouTube :id="data.id" />
-<AboutUs /> -->
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus placeat quia! Voluptates corporis atque itaque, quae in aperiam reiciendis id, beatae dicta optio rem, cumque illum tempore accusamus blanditiis consequuntur doloribus accusantium. Expedita minus suscipit vel nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic rerum earum quos explicabo suscipit maxime iste qui nihil. Reiciendis asperiores minus necessitatibus placeat quia! Voluptates corporis atque itaque, quae in aperiam reiciendis id, beatae dicta optio rem, cumque illum tempore accusamus blanditiis consequuntur doloribus accusantium. Expedita minus suscipit vel nulla.
