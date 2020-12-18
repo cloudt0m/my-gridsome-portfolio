@@ -40,12 +40,23 @@
         </div>
       </div>
     </div>
+    <paging
+      v-if="$page.posts.pageInfo.totalPages > 1"
+      :basePath="'/' + $context.locale + '/blog'"
+      :totalPages="$page.posts.pageInfo.totalPages"
+      :currentPage="$page.posts.pageInfo.currentPage"
+    ></paging>
   </Layout>
 </template>
 
 <page-query>
-query($locale: String!) {
-	posts: allPost(filter: {lang: {eq: $locale}}) {
+query($page: Int, $locale: String!) {
+	posts: allPost(filter: {lang: {eq: $locale}}, sortBy: "date", order: DESC, perPage: 3, page: $page) @paginate {
+    totalCount
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges {
       node {
         id
@@ -60,9 +71,14 @@ query($locale: String!) {
 </page-query>
 
 <script>
+import Paging from "../components/Paging";
+
 export default {
   metaInfo: {
     title: "Blog Posts",
+  },
+  components: {
+    Paging,
   },
 };
 </script>
