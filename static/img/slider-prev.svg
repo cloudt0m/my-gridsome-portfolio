@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="27.876" height="32.188" viewBox="0 0 27.876 32.188">
-  <path id="Path_288" data-name="Path 288" d="M330.043,2902.662v16.094l-13.938-8.047-13.938-8.047,13.938-8.047,13.938-8.047Z" transform="translate(-302.167 -2886.568)" fill="#007cff"/>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#007cff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="5" y1="12" x2="19" y2="12" />
+  <line x1="5" y1="12" x2="11" y2="18" />
+  <line x1="5" y1="12" x2="11" y2="6" />
 </svg>

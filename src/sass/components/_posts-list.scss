@@ -1,7 +1,7 @@
 .posts-list {
-  padding: 6em 0;
+  padding: 6em 0 0 0;
   @include atMedium {
-    padding: 3em 0;
+    padding: 3em 0 0 0;
   }
   .row:last-child {
     .posts-list-item {
