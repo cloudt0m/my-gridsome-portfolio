@@ -28,15 +28,25 @@ export default {
       let nextPath;
       const blogRegex = /(blog\/[a-z])\w+/;
       const worksRegex = /(works\/[a-z])\w+/;
+      const tagRegex = /(tag\/[a-z])\w+/;
       if (currentPath.match(blogRegex)) {
         nextPath = "/" + this.$context.locale + "/blog";
       }
       if (currentPath.match(worksRegex)) {
         nextPath = "/" + this.$context.locale + "/works";
       }
-      this.$router.push({
-        path: this.$tp(nextPath ? nextPath : this.$route.path, this.currentLang, true),
-      });
+      if (currentPath.match(tagRegex)) {
+        nextPath = "/" + this.$context.locale + "/blog";
+        this.$router.push({ path: this.$tp(nextPath, this.currentLang, true) });
+      } else {
+        this.$router.push({
+          path: this.$tp(
+            nextPath ? nextPath : this.$route.path,
+            this.currentLang,
+            true
+          ),
+        });
+      }
     },
   },
 };

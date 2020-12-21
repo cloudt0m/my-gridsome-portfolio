@@ -23,13 +23,12 @@
       <div class="posts-list__container container">
         <div class="row">
           <div class="posts-list-item col-12 pb-0">
-            <h2 class="post-list-item__title">{{ $t('tag') + ": " + $page.tag.title }}</h2>
+            <h2 class="post-list-item__title">Tag: {{ $page.tag.title }}</h2>
           </div>
         </div>
-        <template v-for="post in showPages">
+        <template v-for="post in pages">
           <div
             class="row"
-            v-if="post.lang == $context.locale"
             :key="post.id"
           >
             <div class="posts-list-item col-12">
@@ -47,7 +46,7 @@
           <div class="col-12">
             <paging
               v-if="totalPages > 1"
-              :basePath="'/' + $context.locale + `/tag/${$page.tag.title}`"
+              :basePath="'/' + $context.locale + '/tag/' + $page.tag.title"
               :currentPage="currentPage"
               :totalPages="totalPages"
             />
@@ -62,7 +61,7 @@
 query Tag ($id: ID!, $page: Int) {
   tag: tag (id: $id) {
     title
-    belongsTo (page: $page, perPage: 3) @paginate {
+    belongsTo (page: $page, perPage: 3, sortBy: "date", order: DESC) @paginate {
       totalCount
       pageInfo {
         totalPages
@@ -84,28 +83,15 @@ query Tag ($id: ID!, $page: Int) {
       }    
     }
   }
-  twPosts: allPost (filter: {lang: {eq: "tw"}}) {
+  posts: allPost(filter: {tags: {contains: [$id]}}) {
     edges {
       node {
+        id
         title
-        summary
-        lang
         date (format: "YYYY-MM-DD")
         path
-        tags {
-          title
-        }
-      }
-    }
-  }
-  enPosts: allPost (filter: {lang: {eq: "en"}}) {
-    edges {
-      node {
-        title
         summary
         lang
-        date (format: "YYYY-MM-DD")
-        path
         tags {
           title
         }
@@ -124,33 +110,27 @@ export default {
   components: {
     Paging,
   },
-  data() {
-    return {
-      perPage: 3,
-    };
-  },
   computed: {
-    currentPage() {
-      const pageNumber = parseInt(this.$route.params.page);
-      return pageNumber ? pageNumber : 1;
-    },
     pages() {
-      const enPages = this.$page.enPosts.edges.map((page) => page.node);
-      const twPages = this.$page.twPosts.edges.map((page) => page.node);
-      const currentLang = this.$context.locale;
-      if (currentLang == "en") {
-        return enPages;
-      } else {
-        return twPages;
-      }
+      const data = this.$page.posts.edges
+        .map((edge) => edge.node)
+        .filter((page) => page.lang == this.$context.locale);
+      return data
+    },
+    currentPage() {
+      const currentPage = parseInt(this.$route.params.page);
+      return currentPage ? currentPage : 1;
     },
     totalPages() {
-      return Math.ceil(this.pages.length / this.perPage);
-    },
-    showPages() {
-      const begin = (this.currentPage - 1) * this.perPage;
-      const end = this.currentPage * this.perPage;
-      return this.pages.slice(begin, end)
+      const perPage = 3;
+      const data = this.$page.posts.edges
+        .map((edge) => edge.node)
+        .filter((page) => page.lang == this.$context.locale);
+      const totalPages =
+        data.length % perPage
+          ? Math.floor(data.length / perPage) + 1
+          : Math.floor(data.length / perPage);
+      return totalPages;
     },
   },
 };

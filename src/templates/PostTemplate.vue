@@ -30,7 +30,7 @@
             </div>
             <div class="single-post-item__tags">
               <g-link
-                :to="tag.path"
+                :to="'/' + $context.locale + tag.path"
                 class="btn btn--sm btn--gray"
                 v-for="tag in $page.post.tags"
                 :key="tag.id"
