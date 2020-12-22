@@ -50,7 +50,7 @@
 </template>
 
 <page-query>
-query($page: Int, $locale: String!) {
+query($page: Int, $locale: String) {
 	posts: allPost(filter: {lang: {eq: $locale}}, sortBy: "date", order: DESC, perPage: 3, page: $page) @paginate {
     totalCount
     pageInfo {

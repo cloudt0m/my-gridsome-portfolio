@@ -142,7 +142,7 @@
 </template>
 
 <page-query>
-  query($locale: String!) {
+  query($locale: String) {
     posts: allPost(filter: {lang: {eq: $locale }}) {
       edges {
         node {

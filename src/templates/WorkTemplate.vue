@@ -47,15 +47,17 @@
           </div>
         </div>
         <div class="row">
-          <silent-box :gallery="getImgArray($page.work.otherImages)">
-            <template v-slot:silentbox-item="{ silentboxItem }">
-              <g-image
-                :src=silentboxItem.src
-                :alt=silentboxItem.description
-              />
-              <h5>{{ silentboxItem.description }}</h5>
-            </template>
-          </silent-box>
+          <ClientOnly>
+            <silent-box :gallery="getImgArray($page.work.otherImages)">
+              <template v-slot:silentbox-item="{ silentboxItem }">
+                <g-image
+                  :src=silentboxItem.src
+                  :alt=silentboxItem.description
+                />
+                <h5>{{ silentboxItem.description }}</h5>
+              </template>
+            </silent-box>
+          </ClientOnly>
 
         </div>
 
