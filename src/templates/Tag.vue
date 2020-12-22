@@ -26,33 +26,27 @@
             <h2 class="post-list-item__title">{{ $t('tag') + ": " + $page.tag.title }}</h2>
           </div>
         </div>
-        <template v-for="post in showPages">
-          <div
-            class="row"
-            v-if="post.lang == $context.locale"
-            :key="post.id"
-          >
-            <div class="posts-list-item col-12">
-              <h2 class="posts-list-item__title">{{ post.title }}</h2>
-              <h5 class="posts-list-item__date">{{ post.date }}</h5>
-              <p class="posts-list-item__description j-post-description">{{ post.summary }}</p>
-              <g-link
-                :to="post.path"
-                class="btn btn--primary"
-              >{{ $t('more') }}</g-link>
-            </div>
-          </div>
-        </template>
-        <div class="row">
-          <div class="col-12">
-            <paging
-              v-if="totalPages > 1"
-              :basePath="'/' + $context.locale + `/tag/${$page.tag.title}`"
-              :currentPage="currentPage"
-              :totalPages="totalPages"
-            />
+        <div
+          class="row"
+          v-for="post in showPages"
+          :key="post.id"
+        >
+          <div class="posts-list-item col-12">
+            <h2 class="posts-list-item__title">{{ post.title }}</h2>
+            <h5 class="posts-list-item__date">{{ post.date }}</h5>
+            <p class="posts-list-item__description j-post-description">{{ post.summary }}</p>
+            <g-link
+              :to="post.path"
+              class="btn btn--primary"
+            >{{ $t('more') }}</g-link>
           </div>
         </div>
+        <paging
+          v-if="totalPages > 1"
+          :basePath="'/' + $context.locale + `/tag/${$page.tag.title}`"
+          :currentPage="currentPage"
+          :totalPages="totalPages"
+        />
       </div>
     </div>
   </Layout>
@@ -136,7 +130,7 @@ export default {
     showPages() {
       const begin = (this.currentPage - 1) * this.perPage;
       const end = this.currentPage * this.perPage;
-      return this.pages.slice(begin, end)
+      return this.pages.slice(begin, end);
     },
   },
 };

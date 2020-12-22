@@ -38,14 +38,14 @@
             >{{ $t('more') }}</g-link>
           </div>
         </div>
+        <paging
+          v-if="$page.posts.pageInfo.totalPages > 1"
+          :basePath="'/' + $context.locale + '/blog'"
+          :totalPages="$page.posts.pageInfo.totalPages"
+          :currentPage="$page.posts.pageInfo.currentPage"
+        ></paging>
       </div>
     </div>
-    <paging
-      v-if="$page.posts.pageInfo.totalPages > 1"
-      :basePath="'/' + $context.locale + '/blog'"
-      :totalPages="$page.posts.pageInfo.totalPages"
-      :currentPage="$page.posts.pageInfo.currentPage"
-    ></paging>
   </Layout>
 </template>
 
