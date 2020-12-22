@@ -68,20 +68,6 @@ query Tag ($id: ID!, $page: Int) {
         totalPages
         currentPage
       }
-      edges {
-        node {
-          ... on Post {
-            title
-            date (format: "YYYY-MM-DD")
-            path
-            summary
-            lang
-            tags {
-              title
-            }
-          }
-        }
-      }    
     }
   }
   twPosts: allPost (filter: {lang: {eq: "tw"}}) {
