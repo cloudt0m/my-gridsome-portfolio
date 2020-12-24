@@ -91,7 +91,7 @@
         <div class="works__description">
           <p v-html="$t('worksDescription')"></p>
           <g-link
-            to="/works"
+            :to="$context.locale + '/works'"
             class="btn btn--primary"
           >{{ $t('worksButton') }}</g-link>
         </div>
@@ -128,7 +128,7 @@
               >{{ post.node.summary }}
               </v-clamp>
               <g-link
-                :to="post.node.path"
+                :to="$context.locale + post.node.path"
                 class="btn btn--primary"
               >{{ $t('readButton') }}</g-link>
             </div>
