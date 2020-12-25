@@ -5,8 +5,9 @@
       :options="swiperOptions"
     >
       <swiper-slide class="work-item" v-for="work in works" :key="work.node.id">
-        <g-image
-          :src="work.node.imgSrc"
+        <img
+          :src="work.node.imgSrc.src"
+          :srcset="work.node.imgSrc.srcset"
           alt=""
           class="work-item__cover"
         />
