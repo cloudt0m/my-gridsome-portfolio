@@ -102,6 +102,7 @@
 query Work ($id: ID, $prevId: ID, $nextId: ID) {
   work (id: $id) {
     title
+    summary
     date (format: "YYYY-MM-DD")
     description
     imgSrc
@@ -125,6 +126,19 @@ query Work ($id: ID, $prevId: ID, $nextId: ID) {
 
 <script>
 export default {
+  metaInfo() {
+    return {
+      title: this.$page.work.title,
+      meta: [
+        { key: "og:title", name: "og:title", content: this.$page.work.title },
+        {
+          key: "og:description",
+          name: "og:description",
+          content: this.$page.work.summary,
+        },
+      ],
+    };
+  },
   methods: {
     getImgArray(mutatedImgArray) {
       return mutatedImgArray.map((img) => {

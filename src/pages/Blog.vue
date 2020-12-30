@@ -75,7 +75,14 @@ import Paging from "../components/Paging";
 
 export default {
   metaInfo: {
-    title: "Blog Posts",
+    title: "日誌",
+    meta: [
+      {
+        key: 'og:title',
+        name: 'og:title',
+        content: `日誌 - Homeway's Website`
+      }
+    ]
   },
   components: {
     Paging,

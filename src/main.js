@@ -15,6 +15,27 @@ import '~/sass/styles.scss';
 // import '~/sass/github-markdown.css';
 
 export default function(Vue, { appOptions, router, head, isClient }) {
+  head.meta.push({
+    key: 'og:description',
+    name: 'og:description',
+    content:
+      'Homeway的個人網站，記錄了做過的網站、還有一些工作及電腦網路相關的隨筆文字',
+  });
+
+  head.meta.push({
+    key: 'og:image',
+    name: 'og:image',
+    content: '/img/logo.svg',
+  });
+
+  router.beforeEach((to, _from, next) => {
+    head.meta.push({
+      key: 'og:url',
+      name: 'og:url',
+      content: process.env.GRIDSOME_BASE_PATH + to.path,
+    });
+    next();
+  });
   Vue.component('Layout', Layout);
   SwiperClass.use([Pagination, Navigation]);
   Vue.use(getAwesomeSwiper(SwiperClass));

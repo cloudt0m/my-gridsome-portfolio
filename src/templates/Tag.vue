@@ -99,7 +99,14 @@ query Tag ($id: ID!, $page: Int) {
 import Paging from "../components/Paging.vue";
 export default {
   metaInfo: {
-    title: "Blog Posts",
+    title: "標籤索引",
+    meta: [
+      {
+        key: "og:title",
+        name: "og:title",
+        content: `標籤索引 - Homeway's Website`,
+      },
+    ],
   },
   components: {
     Paging,

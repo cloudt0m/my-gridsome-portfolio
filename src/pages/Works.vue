@@ -74,7 +74,14 @@ query($locale: String) {
 <script>
 export default {
   metaInfo: {
-    title: "Work List",
+    title: "作品",
+    meta: [
+      {
+        key: "og:title",
+        name: "og:title",
+        content: `作品 - Homeway's Website`,
+      },
+    ],
   },
 };
 </script>

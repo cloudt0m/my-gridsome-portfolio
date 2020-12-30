@@ -172,7 +172,14 @@ import VClamp from "vue-clamp";
 
 export default {
   metaInfo: {
-    title: "Main Page",
+    title: "首頁",
+    meta: [
+      {
+        key: "og:title",
+        name: "og:title",
+        content: `Homeway's Website`,
+      },
+    ],
   },
   components: {
     IndexSlider,
