@@ -179,6 +179,12 @@ export default {
         name: "og:title",
         content: `Homeway's Website`,
       },
+      {
+        key: 'og:description',
+        name: 'og:description',
+        content:
+          'Homeway的個人網站，記錄了做過的網站、還有一些工作及電腦網路相關的隨筆文字',
+      }
     ],
   },
   components: {
