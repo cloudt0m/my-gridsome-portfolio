@@ -87,7 +87,7 @@
     <section class="works">
       <div class="container works__container">
         <h2 class="section-title">{{ $t('works') | toUppercase }}</h2>
-        <index-slider :works="$page.works.edges" />
+        <index-slider :works="getLocaleFiltered('works')" />
         <div class="works__description">
           <p v-html="$t('worksDescription')"></p>
           <g-link
@@ -110,8 +110,8 @@
 
           <div
             class="post-item col-md-4"
-            v-for="post in $page.posts.edges"
-            :key="post.id"
+            v-for="(post, index) in getLocaleFiltered('posts')"
+            :key="index"
           >
             <div class="post-item__cover">
               <g-image
@@ -142,8 +142,8 @@
 </template>
 
 <page-query>
-  query($locale: String) {
-    posts: allPost(filter: {lang: {eq: $locale }}) {
+  query {
+    posts: allPost {
       edges {
         node {
           title
@@ -151,15 +151,17 @@
           path
           date (format: "YYYY-MM-DD")
           imgSrc
+          lang
         }
       }
     }
-    works: allWork(filter: {lang: {eq: $locale}}) {
+    works: allWork {
       edges {
         node {
           title
           path
           imgSrc
+          lang
         }
       }
     }
@@ -180,16 +182,23 @@ export default {
         content: `Homeway's Website`,
       },
       {
-        key: 'og:description',
-        name: 'og:description',
+        key: "og:description",
+        name: "og:description",
         content:
-          'Homeway的個人網站，記錄了做過的網站、還有一些工作及電腦網路相關的隨筆文字',
-      }
+          "Homeway的個人網站，記錄了做過的網站、還有一些工作及電腦網路相關的隨筆文字",
+      },
     ],
   },
   components: {
     IndexSlider,
     VClamp,
+  },
+  methods: {
+    getLocaleFiltered(type) {
+      const locale = this.$context.locale;
+      const data = this.$page[type].edges;
+      return data.filter(d => d.node.lang == locale);
+    },
   },
 };
 </script>

@@ -11,6 +11,13 @@ module.exports = {
       use: 'gridsome-plugin-tailwindcss',
     },
     {
+      use: 'gridsome-plugin-i18n',
+      options: {
+        locales: ['tw', 'en'],
+        defaultLocale: 'tw',
+      },
+    },
+    {
       use: '@gridsome/vue-remark',
       options: {
         typeName: 'Post', // Required
@@ -32,14 +39,6 @@ module.exports = {
         baseDir: './works', // Where .md files are located
         pathPrefix: '/works',
         template: './src/templates/WorkTemplate.vue', // Optional
-      },
-    },
-    {
-      use: 'gridsome-plugin-i18n',
-      options: {
-        locales: ['tw', 'en'],
-        defaultLocale: 'tw',
-        messages: {},
       },
     },
   ],
