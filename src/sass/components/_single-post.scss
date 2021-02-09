@@ -3,6 +3,19 @@
   @include atMedium {
     padding: 3em 0;
   }
+  p {
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  p a {
+    font-weight: 700;
+    color: $blue;
+  }
 }
 
 .single-post-item {
